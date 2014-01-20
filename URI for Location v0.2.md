@@ -1,3 +1,5 @@
+_note document converted from Google Docs version_
+
 URI for Location
 
 v0.2
@@ -114,15 +116,20 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
 
 ## References
 
-[1]	"URI Patterns v0.4" [http://tinyurl.com/UKGovLD-revisedUriPatterns](http://tinyurl.com/UKGovLD-revisedUriPatterns) (temporary)
+[1]	"URI Patterns v0.4" 
+[http://tinyurl.com/UKGovLD-revisedUriPatterns](http://tinyurl.com/UKGovLD-revisedUriPatterns) (temporary)
 
-[2]	"Designing URI Sets for Location" [http://data.gov.uk/library/designing-uri-sets-for-location](http://data.gov.uk/library/designing-uri-sets-for-location)
+[2]	"Designing URI Sets for Location" 
+[http://data.gov.uk/library/designing-uri-sets-for-location](http://data.gov.uk/library/designing-uri-sets-for-location)
 
-[3]	INSPIRE Glossary [https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY](https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY)
+[3]	INSPIRE Glossary 
+[https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY](https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY)
 
-[4]	INSPIRE Generic Conceptual Model[http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf](http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf)
+[4]	INSPIRE Generic Conceptual Model
+[http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf](http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf)
 
-[5]	"Formalization of Application Schemas" Simon Cox, CSIRO[https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization](https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization)
+[5]	"Formalization of Application Schemas" Simon Cox, CSIRO
+[https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization](https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization)
 
 [6]	ISO 19103: 2005 	"Geographic information -- Conceptual schema language"
 
@@ -132,7 +139,8 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
 
 [9]	ISO/DIS 19150-2	"Geographic information -- Ontology -- Part 2: Rules for developing ontologies in the Web Ontology Language (OWL)"
 
-[10]	"GeoSPARQL - A Geographic Query Language for RDF Data", Open-Geospatial Consortium (OGC)[http://www.opengeospatial.org/standards/geosparql](http://www.opengeospatial.org/standards/geosparql)
+[10]	"GeoSPARQL - A Geographic Query Language for RDF Data", Open-Geospatial Consortium (OGC)
+[http://www.opengeospatial.org/standards/geosparql](http://www.opengeospatial.org/standards/geosparql)
 
 ## Glossary
 
@@ -201,17 +209,24 @@ along with a collection of right-hand side patterns for: URI Sets; Reference Ite
   </tr>
   <tr>
     <td>URI Sets</td>
-    <td>{prefix}/id/{concept} or {prefix}/{concept}#id</td>
+    <td>{prefix}/id/{concept} or 
+{prefix}/{concept}#id</td>
   </tr>
   <tr>
-    <td>Identifier URI(for reference items)</td>
-    <td>{prefix}/id[/{concept}/{key}]* or {prefix}[/{concept}/{key}]*#id</td>
+    <td>Identifier URI
+(for reference items)</td>
+    <td>{prefix}/id[/{concept}/{key}]* or 
+{prefix}[/{concept}/{key}]*#id</td>
   </tr>
   <tr>
-    <td>Document URI(for reference data)</td>
-    <td>reference data for single reference items:{prefix}/doc[/{concept}/{key}]* or {prefix}[/{concept}/{key}]*
+    <td>Document URI
+(for reference data)</td>
+    <td>reference data for single reference items:
+{prefix}/doc[/{concept}/{key}]* or 
+{prefix}[/{concept}/{key}]*
 optionally, reference data for lists of reference items
-{prefix}/doc/{concept}/{key}]*/{concept} or {prefix}[/{concept}/{key}]*/{concept}</td>
+{prefix}/doc/{concept}/{key}]*/{concept} or 
+{prefix}[/{concept}/{key}]*/{concept}</td>
   </tr>
   <tr>
     <td>Vocabulary URI
@@ -221,7 +236,8 @@ optionally, reference data for lists of reference items
   <tr>
     <td>Vocabulary Term URI
 (for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema)</td>
-    <td>{prefix}/def{/vocabulary*}/{term} or {prefix}}/def{/vocabulary*}#{term}</td>
+    <td>{prefix}/def{/vocabulary*}/{term} or 
+{prefix}}/def{/vocabulary*}#{term}</td>
   </tr>
   <tr>
     <td>Dataset URI
@@ -252,11 +268,15 @@ and INSPIRE namespace identifier is formulated as:
 
 resulting in URI for INSPIRE spatial objects of the form:
 
-`{inspireNamespaceUri}/{localId}[:{versionId}] or{inspireNamespaceUri}/{localId}[/{versionId}] or{inspireNamespaceUri}/{localId}[/version/{versionId}]`
+`{inspireNamespaceUri}/{localId}[:{versionId}] or
+{inspireNamespaceUri}/{localId}[/{versionId}] or
+{inspireNamespaceUri}/{localId}[/version/{versionId}]`
 
 ie. an overall pattern of:
 
-`http://{domain}{/collection*}[/so][/{class}]}/{localId}[:{versionId}] orhttp://{domain}{/collection*}[/so][/{class}]}/{localId}[/{versionId}] or http://{domain}{/collection*}[/so][/{class}]}/{localId}[/version/{versionId}] or `
+`http://{domain}{/collection*}[/so][/{class}]}/{localId}[:{versionId}] or
+http://{domain}{/collection*}[/so][/{class}]}/{localId}[/{versionId}] or 
+http://{domain}{/collection*}[/so][/{class}]}/{localId}[/version/{versionId}] or `
 
 Editorial Note: Ideally we need to resolve on a single pattern for combining **_{localId}_** and **_{versionId} _**for those cases where {versionId) is used. The ../version/.. gives more natural points for truncated URI to list available versions, while the ':' formulation is more succinct and restricts the {*localId}:{versionId}* combination to a single URI path segment.
 
@@ -274,7 +294,8 @@ Here **_{inspireNamespaceId}_** serves the role of a **_{/collection*}_** in the
 
 ie. an overall pattern of:
 
-`http://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/localId}[:{versionId}] orhttp://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/{localId}[/version/{versionId}]`
+`http://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/localId}[:{versionId}] or
+http://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/{localId}[/version/{versionId}]`
 
 Note that **_{theme}_** and **_{class}_** components are made optional, whilst the contribute useful 'hints' to users about the kind of object being referenced, they do not contribute to its identity which is based on the **_inspireNamespaceId_**, **_localId_** and **_versionId_** fields of an INSPIRE spatial object identifier.
 
@@ -312,9 +333,13 @@ When a URI Sets needs to be created by a non-authoritative sources as part of a 
 
 which fully expands to either:
 
-* For http[s] URI based INSPIRE namespaces:`http://{domain}{/collection*}/id[/{concept}]/{codeset}/{codepoint}`
+* For http[s] URI based INSPIRE namespaces:
+`http://{domain}{/collection*}/id[/{concept}]/{codeset}/{codepoint}`
 
-* For non-URI based INSPIRE namespaces :`http://location.data.gov.uk/{inspireNamespaceId}/id[/{concept}]/{codeset}/{codepoint} orhttp://location.data.gov.uk/id/{theme}/{concept}/{codeset}/{codepoint}`For collection based or legacy **_location.data.gov.uk_** URI patterns respectively
+* For non-URI based INSPIRE namespaces :
+`http://location.data.gov.uk/{inspireNamespaceId}/id[/{concept}]/{codeset}/{codepoint} or
+http://location.data.gov.uk/id/{theme}/{concept}/{codeset}/{codepoint}
+`For collection based or legacy **_location.data.gov.uk_** URI patterns respectively
 
 The use of URI based INSPIRE namespace is preferred over the deprecated use of non-URI based INSPIRE namespaces (with collection based prefixing preferred over legacy patterns).
 
@@ -324,8 +349,10 @@ INSPIRE data specifications (NOTE:  http://inspire.jrc.ec.europa.eu/index.cfm/pa
 
 <table>
   <tr>
-    <td>FromISO Construct</td>
-    <td>ToOWL Construct</td>
+    <td>From
+ISO Construct</td>
+    <td>To
+OWL Construct</td>
     <td>URI Pattern</td>
   </tr>
   <tr>
@@ -334,7 +361,9 @@ INSPIRE data specifications (NOTE:  http://inspire.jrc.ec.europa.eu/index.cfm/pa
     <td>For vocabularies derived from INSPIRE data specifications:
 {ontologyName} = http://location.data.gov.uk/inspire/{theme}/def[/{umlPackageName}]
 "inspire/{theme}" serves the role of a {/collection*} name while {umlPackageName} serves the role of {vocabulary}
-For vocabularies derived from local application schema{ontologyName} = http://{host}[/{collection}*]/def/{umlPackageName}
+For vocabularies derived from local application schema
+
+{ontologyName} = http://{host}[/{collection}*]/def/{umlPackageName}
 Such schema arise where there is a need to specialise or extend the common INSPIRE application schema.</td>
   </tr>
   <tr>
@@ -355,12 +384,20 @@ Such schema arise where there is a need to specialise or extend the common INSPI
   <tr>
     <td>Codelist</td>
     <td>SKOS ConceptScheme,SKOS Concept subclass, and instances</td>
-    <td>{ontologyName}('#'|'/'){umlClassName}.scheme{ontologyName}('#'|'/'){umlClassName}{ontologyName}('#'|'/')[{umlClassName}.[cp.]]{umlCodePointName}Note ISO 19150-2 is a work in progress. It does not currently dictate a particular way to distinguish scheme from class from codepoint.</td>
+    <td>{ontologyName}('#'|'/'){umlClassName}.scheme
+{ontologyName}('#'|'/'){umlClassName}
+{ontologyName}('#'|'/')[{umlClassName}.[cp.]]{umlCodePointName}
+
+Note ISO 19150-2 is a work in progress. It does not currently dictate a particular way to distinguish scheme from class from codepoint.</td>
   </tr>
   <tr>
     <td>Enumeration</td>
     <td>An OWL oneOf enumerated data range.</td>
-    <td>{ontologyName}#{umlClassName}            a   rdfs:Datatype            owl:oneOf ( "{enum1}" "{enum2}" ... "{enumN}" ) .Where {enum1} to {enumN} correspond to the literal names of the members of the enumeration.</td>
+    <td>{ontologyName}#{umlClassName}
+            a   rdfs:Datatype
+            owl:oneOf ( "{enum1}" "{enum2}" ... "{enumN}" ) .
+
+Where {enum1} to {enumN} correspond to the literal names of the members of the enumeration.</td>
   </tr>
 </table>
 
@@ -431,73 +468,89 @@ The table below summarises the occurrences of thematic referencing apparent in t
   <tr>
     <td>Administrative Unit</td>
     <td>AdministrativeUnit</td>
-    <td>nationalCode:CharacterString "Thematic identifier corresponding to the national administrative codes defined in each country."</td>
+    <td>nationalCode:CharacterString 
+"Thematic identifier corresponding to the national administrative codes defined in each country."</td>
   </tr>
   <tr>
     <td></td>
     <td>NUTSRegion</td>
-    <td>NUTSCode: CharacterString"Unique code of the territorial unit for statistics as defined in the framework of the Regulation (EC) No 1059/2003 of the European Parliament and of the Council of 26 May 2003.”</td>
+    <td>NUTSCode: CharacterString
+"Unique code of the territorial unit for statistics as defined in the framework of the Regulation (EC) No 1059/2003 of the European Parliament and of the Council of 26 May 2003.”</td>
   </tr>
   <tr>
     <td>Address</td>
-    <td>AddressAddressComponent</td>
-    <td>alternativeIdentifier: CharacterString“External, thematic identifier of the address/address component spatial object, which enables interoperability with existing legacy systems or applications.”</td>
+    <td>Address
+AddressComponent</td>
+    <td>alternativeIdentifier: CharacterString
+“External, thematic identifier of the address/address component spatial object, which enables interoperability with existing legacy systems or applications.”</td>
   </tr>
   <tr>
     <td>Cadastral Parcel
 </td>
-    <td>BasicPropertyUnitCadastralParcel</td>
-    <td>nationalCadastralReference: CharacterString"Thematic identifier at national level, generally the full national code of the basic property unit. Must ensure the link to the national cadastral register or equivalent."</td>
+    <td>BasicPropertyUnit
+CadastralParcel</td>
+    <td>nationalCadastralReference: CharacterString
+"Thematic identifier at national level, generally the full national code of the basic property unit. Must ensure the link to the national cadastral register or equivalent."</td>
   </tr>
   <tr>
     <td></td>
     <td>CadastralZoning</td>
-    <td>nationalCadastalZoningReference: CharacterString“Thematic identifier at national level, generally the full national code of the cadastral zoning.”</td>
+    <td>nationalCadastalZoningReference: CharacterString
+“Thematic identifier at national level, generally the full national code of the cadastral zoning.”</td>
   </tr>
   <tr>
     <td>Transport Networks (Air)</td>
     <td>AerodromeNode</td>
-    <td>designatorIATA: CharacterString“The three letter IATA designator of the aerodrome (airport/heliport).”</td>
+    <td>designatorIATA: CharacterString
+“The three letter IATA designator of the aerodrome (airport/heliport).”</td>
   </tr>
   <tr>
     <td></td>
     <td>AerodromeNode</td>
-    <td>locationIndicatorICAO: CharacterString“The four letter ICAO location indicator of the aerodrome (airport/heliport), as listed in ICAO DOC 7910.”</td>
+    <td>locationIndicatorICAO: CharacterString
+“The four letter ICAO location indicator of the aerodrome (airport/heliport), as listed in ICAO DOC 7910.”</td>
   </tr>
   <tr>
     <td></td>
     <td>Multiple</td>
-    <td>designator: CharacterStringdesignator code values that designate things associated with Air Transport. Designation varies by Object Type.</td>
+    <td>designator: CharacterString
+designator code values that designate things associated with Air Transport. Designation varies by Object Type.</td>
   </tr>
   <tr>
     <td>Transport Networks (Rail)</td>
     <td>RailwayLine</td>
-    <td>railwayLineCode: CharacterString“A code assigned to a railway line which is unique within a Member State”</td>
+    <td>railwayLineCode: CharacterString
+“A code assigned to a railway line which is unique within a Member State”</td>
   </tr>
   <tr>
     <td></td>
     <td>RailwayStationCode</td>
-    <td>stationCode: CharacterString“A unique code assigned to a railway station.”</td>
+    <td>stationCode: CharacterString
+“A unique code assigned to a railway station.”</td>
   </tr>
   <tr>
     <td>Transport Networks (Road)</td>
     <td>ERoad</td>
-    <td>europeanRouteNumber: CharacterString“Code, identifying the route in the international E-road network. The code always starts with a letter 'E', followed by a one-, two- or three-digit number.”</td>
+    <td>europeanRouteNumber: CharacterString
+“Code, identifying the route in the international E-road network. The code always starts with a letter 'E', followed by a one-, two- or three-digit number.”</td>
   </tr>
   <tr>
     <td></td>
     <td>Road</td>
-    <td>localRoadCode: CharacterString“Identification code assigned to the road by the local road authority.”</td>
+    <td>localRoadCode: CharacterString
+“Identification code assigned to the road by the local road authority.”</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
-    <td>nationalRoadCode: CharacterString“The national number of the road.”</td>
+    <td>nationalRoadCode: CharacterString
+“The national number of the road.”</td>
   </tr>
   <tr>
     <td>Hydrography</td>
     <td>HydroObject</td>
-    <td>hydroId: HydroIdentifier“An identifier that is used to identify a hydrographic object in the real world. It provides a 'key' for implicitly associating different representations of the object.”
+    <td>hydroId: HydroIdentifier
+“An identifier that is used to identify a hydrographic object in the real world. It provides a 'key' for implicitly associating different representations of the object.”
 HydroIdentifiers are composed of “classificationScheme”, “namespace” and “local-id” fields. The first two are used to successively scope the third.</td>
   </tr>
 </table>
