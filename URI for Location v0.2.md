@@ -1,5 +1,3 @@
-_note document converted from Google Docs version_
-
 URI for Location
 
 v0.2
@@ -10,9 +8,9 @@ v0.2
 
 **Drafted by: **the UK Government Linked Data Working Group (UKGovLD), including representatives from public-sector departments, agencies and local government, linked-data businesses and the broader linked-data community. 
 
-**Contents**
+_This document will be updated through any outcomes of the [standards.data.gov.uk](http://standards.data.gov.uk) process and published within the UKGovLD section of [data.gov.uk](http://data.gov.uk/linked-data) in February 2014.  Issues can be raised and versioning will be controlled through the [UKGovLD Github repositories](https://github.com/UKGovLD/)_
+_Please also see [URI Patterns core](https://github.com/UKGovLD/URI-patterns-core) for the generic patterns guidance referenced from this document_
 
-[[TOC]]
 
 # Introduction
 
