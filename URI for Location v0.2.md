@@ -270,7 +270,7 @@ Requests using non-URI INSPIRE identifiers, which when mapped to URI have a pref
 
 **`{prefix} = http://location.data.gov.uk/so/{theme}/{class}/{inspireNamespaceId}`**
 
-can be routed on the basis of the **'{inspireNamespaceId}'** (ie. 4th) segment of the request URI.
+can be routed on the basis of the **`{inspireNamespaceId}`** (ie. 4th) segment of the request URI.
 
 ## URI Patterns for Spatial Things
 
