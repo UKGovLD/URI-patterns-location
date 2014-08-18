@@ -27,7 +27,7 @@ It goes on to defined a spatial object as:
 
 This paper is focussed on the use of http[s] URI by the UK public sector to meet its INSPIRE objectives.
 
-This paper updates the URI patterns provided in earlier guidance [[2](#reference.URIforLocationV1.0)] in line with changes proposed for the general use of URI patterns for data publishing within the UK public sector [[1](#reference.URIPatternsV0.4)] and making use of changes in INSPIRE that allow full URI to be used as INSPIRE namespaces[[a](#footnote.a)]. 
+This paper updates the URI patterns provided in earlier guidance [[2](#reference.URIforLocationV1.0)] in line with changes proposed for the general use of URI patterns for data publishing within the UK public sector [[1](#reference.URIPatternsV0.4)] and making use of changes in INSPIRE that allow full URI to be used as INSPIRE namespaces[[**a**](#footnote.a)]. 
 
 <a name="footnote.a">**[a]**</a> Previously character restrictions on the 'spelling' of INSPIRE namespaces prevented URI in general and HTTP URI in particular from being used as INSPIRE namespaces.
 
@@ -41,7 +41,7 @@ INSPIRE documents discuss three forms of identifiers:
 * thematic identifiers
 * geographic identifiers
 
-**Unique object identifiers** are identifiers that can be used to make external[[b](#footnote.b)] references to INSPIRE spatial objects. They are made up of three components:
+**Unique object identifiers** are identifiers that can be used to make external[[**b**](#footnote.b)] references to INSPIRE spatial objects. They are made up of three components:
 
 * **namespaceId**	divides the space of unique object 
   identifiers into partitions that can be administered by 
@@ -89,7 +89,7 @@ The **`{theme}`** and **`{class}`** fields provide human oriented 'hints' about 
 
 Spatial-object publication could be hosted directly at location.data.gov.uk, but more typically, redirection or proxy based access was configured so that access requests are routed to infrastructure provided by the data publisher. 
 
-This original pattern for publishing INSPIRE spatial-objects is awkward in practice, firstly because in order to correctly form a URI for a spatial-object there is a need to know not only it's external object identifier (**`namespaceId`**, **`localId`** and **`versionId`**) but also the INSPIRE data specification class name and theme associated with the object being published; and secondly publications of spatial-objects in location.data.gov.uk URI space separates elements that might easily form a more cohesive single collection e.g. sampling points[[c](#footnote.c)] from their related bathing-waters[[d](#footnote.d)]  and sample assessment data[[e](#footnote.e)].
+This original pattern for publishing INSPIRE spatial-objects is awkward in practice, firstly because in order to correctly form a URI for a spatial-object there is a need to know not only it's external object identifier (**`namespaceId`**, **`localId`** and **`versionId`**) but also the INSPIRE data specification class name and theme associated with the object being published; and secondly publications of spatial-objects in location.data.gov.uk URI space separates elements that might easily form a more cohesive single collection e.g. sampling points[[**c**](#footnote.c)] from their related bathing-waters[[**d**](#footnote.d)]  and sample assessment data[[**e**](#footnote.e)].
 
 The character constraints associated with the components of an INSPIRE spatial-object identifiers have been relaxed.It is now possible to use URI, particularly dereferencable URI such as an HTTP or HTTPS URI, as INSPIRE namespace identifiers. 
 
@@ -97,7 +97,7 @@ Given this change, there is no longer a need for **http://location.data.gov.uk *
 
 **`http://{domain}{/collection*}[/so][/{class}]/{inspireLocalId}[/{inspireVersionId}]`**
 
-The use of **location.data.gov.uk** as base URI for the publication of INSPIRE spatial objects is **deprecated** by this revision. However, earlier URI pattern continues to be supported in order to support existing use.
+The use of **`location.data.gov.uk`** as base URI for the publication of INSPIRE spatial objects is **deprecated** by this revision. However, earlier URI pattern continues to be supported in order to support existing use.
 
 New spatial-object publications are encouraged to use absolute http(s): URI as the INSPIRE namespace identifier component of an INSPIRE spatial-object's external identifier.
 
@@ -109,21 +109,21 @@ New spatial-object publications are encouraged to use absolute http(s): URI as t
 
 In order to capture and present URI patterns, some notation for writing them down is required.
 
-The pattern notation used in this document is based on the "URI Template" specification defined in[ RFC6570](http://tools.ietf.org/html/rfc6570). 
+The pattern notation used in this document is based on the "URI Template" specification defined in [RFC6570](http://tools.ietf.org/html/rfc6570). 
 
-Curly braces, ie. ‘{‘ and ‘}’ are used it introduce template variable expression per [RFC6570](http://tools.ietf.org/html/rfc6570). In addition: we use matched square brackets, ie  ‘[‘ and ‘]’ are used to introduce optional components and a star, ie ‘*’ following such bracket components allows arbitrary repetition (zero or more times) of the group matched by the immediately preceding closing square bracket. Other characters outside of matched curly braces or square brackets represent literal characters to be matched.
+Curly braces, ie. ‘`{`’ and ‘`}`’ are used it introduce template variable expression per [RFC6570](http://tools.ietf.org/html/rfc6570). In addition: we use matched square brackets, ie  ‘`[`’ and ‘`]`’ are used to introduce optional components and a star, ie ‘`*`’ following such bracket components allows arbitrary repetition (zero or more times) of the group matched by the immediately preceding closing square bracket. Other characters outside of matched curly braces or square brackets represent literal characters to be matched.
 
 In RFC6570, a variable expression such as:
 
-**{/collection*}**
+  **`{/collection*}`**
 
 when expanded with a variable binding of:
 
-**collection=("seg1",”seg2”,”seg3”) ** 
+  **`collection=("seg1",”seg2”,”seg3”)`** 
 
 contributes the multi-segment component
 
-**"/seg1/seg2/seg3"**
+  **`"/seg1/seg2/seg3"`**
 
 in the corresponding position of the resulting URI. From a URI parsing point-of-view we take such an expression to parse an arbitrary number of path segments into an array valued variable. Given the somewhat general nature of the patterns that follow there are several possible parsings of URI into bindings for any matching URI. However, the patterns presented here as a means to provide some guidance. Actual deployments will make more limiting choices than these somewhat open patterns allow.
 
@@ -177,55 +177,16 @@ http://www.opengeospatial.org/standards/geosparql
 
 ## Glossary
 
-<table>
-  <tr>
-    <td>Term</td>
-    <td>Definition</td>
-    <td>Source</td>
-  </tr>
-  <tr>
-    <td>Spatial Object</td>
-    <td>an abstract representation of a real-world phenomenon related to a specific location or geographical area
-NOTE This INSPIRE term is synonymous with the ISO 19100 term "(geographic) feature", and distinct from ISO "spatial object", which specifically contains the positional information for a feature.</td>
-    <td>INSPIRE Glossary item 67</td>
-  </tr>
-  <tr>
-    <td>Spatial Thing</td>
-    <td>"Anything with spatial extent, i.e. size, shape, or position. e.g. people, places, bowling balls, as well as abstract areas like cubes."
-Spatial-Things are that subset of 'real-world phenomena' which relate to a location.</td>
-    <td>W3C “WGS84 Geo Positioning: an RDF vocabulary”</td>
-  </tr>
-  <tr>
-    <td>Unique Object Identifier</td>
-    <td>identifier associated with a spatial object</td>
-    <td>INSPIRE Glossary Item 77</td>
-  </tr>
-  <tr>
-    <td>Thematic Identifier</td>
-    <td>descriptive unique object identifier applied to spatial objects in a defined information theme
-EXAMPLE an administrative code for administrative area spatial objects in the administrative units theme, a parcel code for parcel spatial objects in a cadastral theme</td>
-    <td>INSPIRE Glossary item 73</td>
-  </tr>
-  <tr>
-    <td>Geographic Identifier</td>
-    <td>spatial reference in the form of a label or code that identifies a location [ISO 19112]
-EXAMPLE 1 Place names: Paris, Rhine, Mont Blanc
-EXAMPLE 2 Postal codes: 53115, 01009, SW1, IV19 1PZ</td>
-    <td>INSPIRE Glossary item 32</td>
-  </tr>
-  <tr>
-    <td>URI Set</td>
-    <td>a collection of reference data published using
-URIs, about a single concept, governed from a single source.</td>
-    <td>“Designing URI Sets for the UK Public Sector”</td>
-  </tr>
-  <tr>
-    <td>Web Representation</td>
-    <td>Web representation is typically carried in the entity body of an HTTP protocol message. It generally has an associate internet media-type.</td>
-    <td></td>
-  </tr>
-</table>
 
+| **Term** | **Definition** | **Source** |
+|----------|----------------|------------|
+| Spatial Object | an abstract representation of a real-world phenomenon related to a specific location or geographical area <br /><br />**NOTE** This INSPIRE term is synonymous with the ISO 19100 term "(geographic) feature", and distinct from ISO "spatial object", which specifically contains the positional information for a feature. | INSPIRE Glossary item 67 |
+| Spatial Thing | "Anything with spatial extent, i.e. size, shape, or position. e.g. people, places, bowling balls, as well as abstract areas like cubes." <br /><br />Spatial-Things are that subset of 'real-world phenomena' which relate to a location. | “WGS84 Geo Positioning: an RDF vocabulary” |
+| Unique Object Identifier | identifier associated with a spatial object | INSPIRE Glossary Item 77 |
+| Thematic Identifier | descriptive unique object identifier applied to spatial objects in a defined information theme EXAMPLE an administrative code for administrative area spatial objects in the administrative units theme, a parcel code for parcel spatial objects in a cadastral theme | INSPIRE Glossary item 73 |
+| Geographic Identifier | spatial reference in the form of a label or code that identifies a location [ISO 19112]<br />EXAMPLE 1 Place names: Paris, Rhine, Mont Blanc<br />EXAMPLE 2 Postal codes: 53115, 01009, SW1, IV19 1PZ | INSPIRE Glossary item 32 |
+| URI Set | a collection of reference data published using URIs, about a single concept, governed from a single source. | “Designing URI Sets for the UK Public Sector” |
+| Web Representation | Web representation is typically carried in the entity body of an HTTP protocol message. It generally has an associate internet media-type. ||
 
 # Revised Generic URI Patterns
 
