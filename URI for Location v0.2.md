@@ -2,8 +2,6 @@ _This document will be updated through any outcomes of the [standards.data.gov.u
 
 _The temporary master version of this document (as in correctly formatted) is held in: https://docs.google.com/document/d/1bomgtzaopicXpNs94agDLYPGK9ZJIsMuj68HpRqq8Wo/edit?usp=sharing this will move to the github markdown formatted file shortly_
 
-
-
 # URI for Location
 
 v0.2
@@ -21,11 +19,11 @@ v0.2
 
 The EU INSPIRE Directive calls for:
 
-"a common framework for the unique identification of spatial objects, to which identifiers under national systems can be mapped in order to ensure interoperability between them"
+> "a common framework for the unique identification of spatial objects, to which identifiers under national systems can be mapped in order to ensure interoperability between them"
 
 It goes on to defined a spatial object as:
 
-"... an abstract representation of a real-world phenomenon related to a specific location or geographical area"[[3](#reference.INSPIRE-Glossary)]
+> "... an abstract representation of a real-world phenomenon related to a specific location or geographical area"[[3](#reference.INSPIRE-Glossary)]
 
 This paper is focussed on the use of http[s] URI by the UK public sector to meet its INSPIRE objectives.
 
@@ -38,18 +36,25 @@ INSPIRE spatial-objects are "... an abstract representation of a real-world phen
 INSPIRE documents discuss three forms of identifiers:
 
 * unique object identifiers
-
 * thematic identifiers
-
 * geographic identifiers
 
 **Unique object identifiers** are identifiers that can be used to make external (NOTE:  i.e. references to objects within a dataset from outside of that dataset.) references to INSPIRE spatial objects. They are made up of three components:
 
-**namespaceId**	divides the space of unique object identifiers into partitions that can be administered by different data publishers. INSPIRE delegates the assignment of INSPIRE namespace identifiers to member-states. Recent changes mean that it is now possible to use a URI as an INSPIRE namespace identifier.
+* **namespaceId**	divides the space of unique object 
+  identifiers into partitions that can be administered by 
+  different data publishers. INSPIRE delegates the assignment of 
+  INSPIRE namespace identifiers to member-states. Recent changes 
+  mean that it is now possible to use a URI as an INSPIRE namespace identifier.
 
-**localId**	The localId of a spatial-object within a namespace. Distinguishes one spatial-object from another within namespace.
+* **localId**	The localId of a spatial-object within a namespace. 
+  Distinguishes one spatial-object from another within namespace.
 
-**versionId**	Identifies the version of a spatial-object. This may be as part of the objects presentation simple as a means to indicate change or as a means to identify specific object versions in systems that maintain object history. Object versioning and change is discussed further in "Annex II Things, Spatial-Objects and Versions".
+* **versionId**	Identifies the version of a spatial-object. This may 
+  be as part of the objects presentation simple as a means to indicate 
+  change or as a means to identify specific object versions in systems 
+  that maintain object history. Object versioning and change is discussed 
+  further in "Annex II Things, Spatial-Objects and Versions".
 
 **Thematic identifiers** are typically conveyed as coded attributes of a spatial object, for example a railway station or airport code from a reservation system, or a waterbody identifier from a catchment planning system. When given or available they 'identify' the real-world phenomena for which the spatial-object is abstract representation. Ideally thematic identifiers where available should be used to form URI for the real-world phenomena to which they pertain. They provide away of associating multiple spatial-objects that pertain to the same real-world phenomena. See xxx
 
