@@ -142,21 +142,18 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
     <td><a name="reference.ISO19103"/>[6]</td>
     <td>ISO 19103: 2005 "Geographic information -- Conceptual schema language"
     </td>
-  <tr/>
+  </tr>
   <tr>
     <td><a name="reference.ISO19109"/>[7]</td>
-    <td>ISO 19109:2005 "Geographic information -- Rules for application schema"
-    </td>
+    <td>ISO 19109:2005 "Geographic information -- Rules for application schema"</td>
   </tr>
   <tr>
     <td><a name="reference.ISO19150-1"/>[8]</td>
-    <td>ISO 19150-1:2012 "Geographic information — Ontology — Part 1: Framework"
-    </td>
-  <tr/>
+    <td>ISO 19150-1:2012 "Geographic information — Ontology — Part 1: Framework"</td>
+  </tr>
   <tr>
     <td><a name="reference.ISO19150-2"/>[9]</td>
-    <td>ISO/DIS 19150-2	"Geographic information -- Ontology -- Part 2: Rules for developing ontologies in the Web Ontology Language (OWL)"
-    </td>
+    <td>ISO/DIS 19150-2	"Geographic information -- Ontology -- Part 2: Rules for developing ontologies in the Web Ontology Language (OWL)"</td>
   </tr>
   <tr>
     <td><a name="reference.GeoSparql"/>[10]</td>
