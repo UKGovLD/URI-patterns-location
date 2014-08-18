@@ -155,7 +155,7 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
     <td>ISO/DIS 19150-2	"Geographic information -- Ontology -- Part 2: Rules for developing ontologies in the Web Ontology Language (OWL)"</td>
   </tr>
   <tr>
-    <td><a name="reference.GeoSparql"/>[10]<td>
+    <td><a name="reference.GeoSparql"/>[10]</td>
     <td>"GeoSPARQL - A Geographic Query Language for RDF Data", Open-Geospatial Consortium (OGC)<br />
 [http://www.opengeospatial.org/standards/geosparql](http://www.opengeospatial.org/standards/geosparql)
      </td>
