@@ -101,9 +101,9 @@ The use of **location.data.gov.uk** as base URI for the publication of INSPIRE s
 
 New spatial-object publications are encouraged to use absolute http(s): URI as the INSPIRE namespace identifier component of an INSPIRE spatial-object's external identifier.
 
-<a name="footnote.c">[c]</a> http://location.data.gov.uk/so/ef/SamplingPoint/bwsp.eaew
-<a name="footnote.d">[d]</a> http://environment.data.gov.uk/id/bathing-water
-<a name="footnote.e">[e]</a> http://environment.data.gov.uk/data/bathing-water-quality
+<a name="footnote.c">**[c]**</a> http://location.data.gov.uk/so/ef/SamplingPoint/bwsp.eaew  
+<a name="footnote.d">**[d]**</a> http://environment.data.gov.uk/id/bathing-water  
+<a name="footnote.e">**[e]**</a> http://environment.data.gov.uk/data/bathing-water-quality
 
 ## Pattern Notation
 
