@@ -27,9 +27,9 @@ It goes on to defined a spatial object as:
 
 This paper is focussed on the use of http[s] URI by the UK public sector to meet its INSPIRE objectives.
 
-This paper updates the URI patterns provided in earlier guidance [[2](#reference.URIforLocationV1.0)] in line with changes proposed for the general use of URI patterns for data publishing within the UK public sector [[1](#reference.URIPatternsV0.4)] and making use of changes in INSPIRE that allow full URI to be used as INSPIRE namespaces[a]. 
+This paper updates the URI patterns provided in earlier guidance [[2](#reference.URIforLocationV1.0)] in line with changes proposed for the general use of URI patterns for data publishing within the UK public sector [[1](#reference.URIPatternsV0.4)] and making use of changes in INSPIRE that allow full URI to be used as INSPIRE namespaces[[a](#footnote.a)]. 
 
-[a]: Previously character restrictions on the 'spelling' of INSPIRE namespaces prevented URI in general and HTTP URI in particular from being used as INSPIRE namespaces.
+<a name="footnote.a">**[a]**</a> Previously character restrictions on the 'spelling' of INSPIRE namespaces prevented URI in general and HTTP URI in particular from being used as INSPIRE namespaces.
 
 ## INSPIRE Spatial Objects
 
@@ -41,7 +41,7 @@ INSPIRE documents discuss three forms of identifiers:
 * thematic identifiers
 * geographic identifiers
 
-**Unique object identifiers** are identifiers that can be used to make external[b] references to INSPIRE spatial objects. They are made up of three components:
+**Unique object identifiers** are identifiers that can be used to make external[[b](#footnote.b)] references to INSPIRE spatial objects. They are made up of three components:
 
 * **namespaceId**	divides the space of unique object 
   identifiers into partitions that can be administered by 
@@ -66,7 +66,7 @@ INSPIRE documents discuss three forms of identifiers:
 
 and gives place names and post codes as examples of geographic identifiers. Geographic identifiers may be spatial-objects in their own right, for example Addresses under INSPIRE Annex I or property based references to entries in a gazetteer. They are not discussed further in this document.
 
-[b] i.e. references to objects within a dataset from outside of that dataset.
+<a name="footnote.b">**[b]**</a> i.e. references to objects within a dataset from outside of that dataset.
 
 ## location.data.gov.uk
 
@@ -89,7 +89,7 @@ The **`{theme}`** and **`{class}`** fields provide human oriented 'hints' about 
 
 Spatial-object publication could be hosted directly at location.data.gov.uk, but more typically, redirection or proxy based access was configured so that access requests are routed to infrastructure provided by the data publisher. 
 
-This original pattern for publishing INSPIRE spatial-objects is awkward in practice, firstly because in order to correctly form a URI for a spatial-object there is a need to know not only it's external object identifier (**`namespaceId`**, **`localId`** and **`versionId`**) but also the INSPIRE data specification class name and theme associated with the object being published; and secondly publications of spatial-objects in location.data.gov.uk URI space separates elements that might easily form a more cohesive single collection e.g. sampling points[c] from their related bathing-waters[d]  and sample assessment data[e].
+This original pattern for publishing INSPIRE spatial-objects is awkward in practice, firstly because in order to correctly form a URI for a spatial-object there is a need to know not only it's external object identifier (**`namespaceId`**, **`localId`** and **`versionId`**) but also the INSPIRE data specification class name and theme associated with the object being published; and secondly publications of spatial-objects in location.data.gov.uk URI space separates elements that might easily form a more cohesive single collection e.g. sampling points[[c](#footnote.c)] from their related bathing-waters[[d](#footnote.d)]  and sample assessment data[[e](#footnote.e)].
 
 The character constraints associated with the components of an INSPIRE spatial-object identifiers have been relaxed.It is now possible to use URI, particularly dereferencable URI such as an HTTP or HTTPS URI, as INSPIRE namespace identifiers. 
 
@@ -101,9 +101,9 @@ The use of **location.data.gov.uk** as base URI for the publication of INSPIRE s
 
 New spatial-object publications are encouraged to use absolute http(s): URI as the INSPIRE namespace identifier component of an INSPIRE spatial-object's external identifier.
 
-[c]: http://location.data.gov.uk/so/ef/SamplingPoint/bwsp.eaew
-[d]: http://environment.data.gov.uk/id/bathing-water
-[e]: http://environment.data.gov.uk/data/bathing-water-quality
+<a name="footnote.c">[c]</a> http://location.data.gov.uk/so/ef/SamplingPoint/bwsp.eaew
+<a name="footnote.d">[d]</a> http://environment.data.gov.uk/id/bathing-water
+<a name="footnote.e">[e]</a> http://environment.data.gov.uk/data/bathing-water-quality
 
 ## Pattern Notation
 
