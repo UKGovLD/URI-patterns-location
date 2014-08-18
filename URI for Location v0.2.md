@@ -292,116 +292,89 @@ which fully expands to either:
 * For non-URI based INSPIRE namespaces :  
 **`http://location.data.gov.uk/{inspireNamespaceId}/id[/{concept}]/{codeset}/{codepoint}`** or  
 **`http://location.data.gov.uk/id/{theme}/{concept}/{codeset}/{codepoint}`**  
-For collection based or legacy **_location.data.gov.uk_** URI patterns respectively
+for collection based or legacy **`_location.data.gov.uk`_** URI patterns respectively
 
 The use of URI based INSPIRE namespace identifiers is preferred over the deprecated use of non-URI based INSPIRE namespaces (with collection based prefixing preferred over legacy patterns).
 
 ## URI Patterns for INSPIRE derived Vocabulary Terms
 
-INSPIRE data specifications (NOTE:  http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2) are defined as ISO 19103 [[6](#reference.ISO19103)] and ISO 19109 [[7](#reference.ISO19109)] application schema. ISO 19150 [8,9] provides rules for deriving OWL vocabularies (ontologies) from the corresponding application scheme. In general, ISO19150 part 2 [[9](#reference.ISO19150-2)] maps:
+INSPIRE data specifications [[**f**](#footnote.f)] are defined as ISO 19103 [[6](#reference.ISO19103)] and ISO 19109 [[7](#reference.ISO19109)] application schema. ISO 19150 [8,9] provides rules for deriving OWL vocabularies (ontologies) from the corresponding application scheme. In general, ISO19150 part 2 [[9](#reference.ISO19150-2)] maps:
 
 <table>
   <tr>
-    <td>From
-ISO Construct</td>
-    <td>To
-OWL Construct</td>
-    <td>URI Pattern</td>
+    <td><strong>From
+ISO Construct</strong></td>
+    <td><strong>To
+OWL Construct</strong></td>
+    <td><strong>URI Pattern</strong></td>
   </tr>
   <tr>
     <td>Application Schema</td>
     <td>OWL Ontology</td>
-    <td>For vocabularies derived from INSPIRE data specifications:
-{ontologyName} = http://location.data.gov.uk/inspire/{theme}/def[/{umlPackageName}]
-"inspire/{theme}" serves the role of a {/collection*} name while {umlPackageName} serves the role of {vocabulary}
-For vocabularies derived from local application schema
+    <td><p>For vocabularies derived from INSPIRE data specifications:<br /><br />
+<strong><code>{ontologyName} = http://location.data.gov.uk/inspire/{theme}/def[/{umlPackageName}]</code></strong></p>
+<p><strong><code>inspire/{theme}</code></strong> serves the role of <strong><code>{/collection*}</code></strong> while <strong><code>{umlPackageName}</code></strong> serves the role of <strong><code>{vocabulary}</code></strong></p>
+<p>For vocabularies derived from local application schema<br/><br />
 
-{ontologyName} = http://{host}[/{collection}*]/def/{umlPackageName}
-Such schema arise where there is a need to specialise or extend the common INSPIRE application schema.</td>
+<strong><code>{ontologyName} = http://{host}[/{collection}*]/def/{umlPackageName}</code></strong><br/ ><br />
+Such schema arise where there is a need to specialise or extend the common INSPIRE application schema.</p></td>
   </tr>
   <tr>
     <td>Feature Type</td>
     <td>OWL Class</td>
-    <td>{ontologyName}('#'|'/'){umlClassName}</td>
+    <td><strong><code>{ontologyName}('#'|'/'){umlClassName}</code></strong></td>
   </tr>
   <tr>
     <td>Association</td>
     <td>OWL ObjectProperty</td>
-    <td>{ontologyName}('#'|'/')[{umlClassName}.]{umlAssociationRoleName}</td>
+    <td><strong><code>{ontologyName}('#'|'/')[{umlClassName}.]{umlAssociationRoleName}</code></strong></td>
   </tr>
   <tr>
     <td>Attribute</td>
     <td>OWL Object or Datatype Property</td>
-    <td>{ontologyName}('#'|'/')[{umlClassName}.]{umlAttributeName}</td>
+    <td><strong><code>{ontologyName}('#'|'/')[{umlClassName}.]{umlAttributeName}</code></strong></td>
   </tr>
   <tr>
     <td>Codelist</td>
-    <td>SKOS ConceptScheme,SKOS Concept subclass, and instances</td>
-    <td>{ontologyName}('#'|'/'){umlClassName}.scheme
-{ontologyName}('#'|'/'){umlClassName}
-{ontologyName}('#'|'/')[{umlClassName}.[cp.]]{umlCodePointName}
-
-Note ISO 19150-2 is a work in progress. It does not currently dictate a particular way to distinguish scheme from class from codepoint.</td>
+    <td>SKOS ConceptScheme,<br />SKOS Concept subclass,<br /> and instances</td>
+    <td><p><strong><code>{ontologyName}('#'|'/'){umlClassName}.scheme</code></strong><br />
+<strong><code>{ontologyName}('#'|'/'){umlClassName}</code></strong><br />
+<strong><code>{ontologyName}('#'|'/')[{umlClassName}.[cp.]]{umlCodePointName}</code></strong></p>
+<p>Note ISO 19150-2 is a work in progress. It does not currently dictate a particular way to distinguish scheme from class from codepoint.</p></td>
   </tr>
   <tr>
     <td>Enumeration</td>
     <td>An OWL oneOf enumerated data range.</td>
-    <td>{ontologyName}#{umlClassName}
-            a   rdfs:Datatype
-            owl:oneOf ( "{enum1}" "{enum2}" ... "{enumN}" ) .
+    <td><p><strong><code>{ontologyName}('#'|'/'){umlClassName}</code></strong><br />
+            <strong><code>&nbsp;&nbsp;&nbsp;a   rdfs:Datatype ;</code></strong><br />
+            <strong><code>&nbsp;&nbsp;&nbsp;owl:oneOf ( "{enum1}" "{enum2}" ... "{enumN}" ) .</code></strong></p>
 
-Where {enum1} to {enumN} correspond to the literal names of the members of the enumeration.</td>
+<p>Where <strong><code>{enum1}</code></strong> to <strong><code>{enumN}</code></strong> correspond to the literal names of the members of the enumeration.</p></td>
   </tr>
 </table>
 
-
-Note: ISO 19150-2 has a mild bias toward the use of '#' as a separator between the local part of a URI and its remainder. Both '#' and '/' are generally acceptable separators for such purposes - hence *`('#' |'/'*)` in the patterns above.
+Note: ISO 19150-2 has a mild bias toward the use of `'#'` as a separator between the local part of a URI and its remainder. Both `'#'` and `'/'` are generally acceptable separators for such purposes - hence `('#' |'/'*)` in the patterns above.
 
 Note: for attributes and associations the approach of qualifying an attribute name or association role name with the name of the UML class for which its use is defined is there a need to disambiguate multiple local uses of the same attribute/association role name by different classes within the same package (i.e. ontology). Where a given property/role name is either used only once within a package or where all uses within a package are consistent in the sense of having a common range constraint (or a range constraint that can be generalised) then such qualification is unnecessary.
 
 Note: application schema can import other application schema and/or elements of the ISO 19xxx series Harmonised Model. The package names associated with properties are the package name/application-schema name, is the one in which the property is defined. In order to share property use across the widest possible scope they should be introduced at a sufficiently high level within the combined schema's class hierarchy.
 
-The table below illustrate the application of these patterns to the creation of link-data vocabulary terms for the **Road **feature type of the "Road Transport Network" application schema.
+<a name="footnote.f">**[f]**</a> http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2
+
+The table below illustrate the application of these patterns to the creation of link-data vocabulary terms for the **Road** feature type of the "Road Transport Network" application schema.
 
 ![image alt text](image_0.png)
 
-<table>
-  <tr>
-    <td>URI</td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>http://location.data.gov.uk/inspire/tn/def/common-transport-elements/TransportLinkSet</td>
-    <td>TransportLinkSet featureType</td>
-  </tr>
-  <tr>
-    <td>http://location.data.gov.uk/inspire/tn/def/road-transport-network/Road</td>
-    <td>Road featureType</td>
-  </tr>
-  <tr>
-    <td>http://location.data.gov.uk/inspire/tn/def/road-transport-network/localRoadCode</td>
-    <td>localRoadCode property of a Road feature</td>
-  </tr>
-  <tr>
-    <td>http://location.data.gov.uk/inspire/tn/def/road-transport-network/nationalRoadCode</td>
-    <td>nationalRoadCode property of a Road feature</td>
-  </tr>
-  <tr>
-    <td>http://location.data.gov.uk/inspire/common/def/inspire/validFrom</td>
-    <td>INSPIRE wide reusable validFrom property</td>
-  </tr>
-  <tr>
-    <td>http://location.data.gov.uk/inspire/common/def/inspire/validTo</td>
-    <td>INSPIRE wide reusable validTo property</td>
-  </tr>
-  <tr>
-    <td>http://location.data.gov.uk/inspire/common/def/inspire/inspireId</td>
-    <td>INSPIRE wide reusable inspireId property</td>
-  </tr>
-</table>
+| **URI** | **Description** |
+|---------|-----------------|
+| http://location.data.gov.uk/inspire/tn/def/common-transport-elements/TransportLinkSet | `TransportLinkSet` featureType |
+| http://location.data.gov.uk/inspire/tn/def/road-transport-network/Road | `Road` featureType |
+| http://location.data.gov.uk/inspire/tn/def/road-transport-network/localRoadCode | `localRoadCode` property of a `Road` feature |
+| http://location.data.gov.uk/inspire/tn/def/road-transport-network/nationalRoadCode | `nationalRoadCode` property of a `Road` feature |
+| http://location.data.gov.uk/inspire/common/def/inspire/validFrom | INSPIRE wide reusable `validFrom` property |
+| http://location.data.gov.uk/inspire/common/def/inspire/inspireId | INSPIRE wide reusable `inspireId` property |
 
-
-Note that because **_validFrom_**, **_validTo_** and **_inspireId_** are used consistently across a large number of INSPIRE application schema, they have been defined (here) as properties defined within a 'pseudo' application schema 'inspire' within a collection at http://location.data.gov.uk/inspire/common
+Note that because **_`validFrom`_**, **_`validTo`_** and **_`inspireId`_** are used consistently across a large number of INSPIRE application schema, they have been defined (here) as properties defined within a 'pseudo' application schema `'inspire'` within a collection at `http://location.data.gov.uk/inspire/common`
 
 # Annex I: Thematic Referencing in INSPIRE
 
