@@ -131,7 +131,7 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
     <td>INSPIRE Glossary<br />[https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY](https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY</td>
   </tr>
   <tr>
-    <td><a name="reference.INSPIRE-GCM"/>[4]<tr>
+    <td><a name="reference.INSPIRE-GCM"/>[4]</td>
     <td>INSPIRE Generic Conceptual Model<br />[http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf](http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf)</td>
   </tr>
   <tr>
