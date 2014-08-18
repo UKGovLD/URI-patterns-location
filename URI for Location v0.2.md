@@ -496,5 +496,5 @@ Dominant common practices for geometry representation in RDF has yet to emerge. 
 
 * Big literal expressions - including either a WKT, GeoJSON or GML literal expression of a geometry possibly generated on-the-fly in response to request parameters. This is the approach adopted by GeoSPARQL.
 
-* ISO 19150 [8,9] based RDF projection of GML geometries which exposed geometric structure in RDF at least down to poly-line boundaries as big-literals if not down to individual points where appropriate. [More investigation required].
+* ISO 19150 [[8](#reference.ISO19150-1),[9](#reference.ISO19150-2)] based RDF projection of GML geometries which exposed geometric structure in RDF at least down to poly-line boundaries as big-literals if not down to individual points where appropriate. [More investigation required].
 
