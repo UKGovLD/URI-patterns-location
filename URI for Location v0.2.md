@@ -192,87 +192,46 @@ http://www.opengeospatial.org/standards/geosparql
 
 The revised URI pattern guidance [[1](#reference.URIPatternsV0.4)] a defines a common left-hand side URI pattern of:
 
-`{prefix} = http://{domain}{/collection*}`
+**`{prefix} = http://{domain}{/collection*}`**
 
 along with a collection of right-hand side patterns for: URI Sets; Reference Items (members of URI sets) and their reference documents; vocabularies and vocabulary terms; data sets and data items. These patterns are summarised below and discussed in more detail in [[1](#reference.URIPatternsV0.4)]
 
-<table>
-  <tr>
-    <td></td>
-    <td>Pattern</td>
-  </tr>
-  <tr>
-    <td>URI Sets</td>
-    <td>{prefix}/id/{concept} or 
-{prefix}/{concept}#id</td>
-  </tr>
-  <tr>
-    <td>Identifier URI
-(for reference items)</td>
-    <td>{prefix}/id[/{concept}/{key}]* or 
-{prefix}[/{concept}/{key}]*#id</td>
-  </tr>
-  <tr>
-    <td>Document URI
-(for reference data)</td>
-    <td>reference data for single reference items:
-{prefix}/doc[/{concept}/{key}]* or 
-{prefix}[/{concept}/{key}]*
-optionally, reference data for lists of reference items
-{prefix}/doc/{concept}/{key}]*/{concept} or 
-{prefix}[/{concept}/{key}]*/{concept}</td>
-  </tr>
-  <tr>
-    <td>Vocabulary URI
-(for vocabularies, ontologies, concept schemes, codelists and schema)</td>
-    <td>{prefix}/def{/vocabulary*}</td>
-  </tr>
-  <tr>
-    <td>Vocabulary Term URI
-(for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema)</td>
-    <td>{prefix}/def{/vocabulary*}/{term} or 
-{prefix}}/def{/vocabulary*}#{term}</td>
-  </tr>
-  <tr>
-    <td>Dataset URI
-(for datasets)</td>
-    <td>{prefix}/data{/dataset*}</td>
-  </tr>
-  <tr>
-    <td>Data Item URI
-(for data items within datasets).</td>
-    <td>{prefix}/data{/dataset*}[/{concept}/{key}]*</td>
-  </tr>
-</table>
-
+|         | **Pattern** | 
+|---------|-------------|
+| **URI Sets**       | `{prefix}/id/{concept}` or `{prefix}/{concept}#id` |
+| **Identifier URI** (for reference items) | `{prefix}/id[/{concept}/{key}]*` or `{prefix}[/{concept}/{key}]*#id` |
+| **Document URI** (for reference data)    | reference data for single reference items: <br /> `{prefix}/doc[/{concept}/{key}]*` or `{prefix}[/{concept}/{key}]*` <br/><br/>optionally, reference data for lists of reference items<br /> `{prefix}/doc/{concept}/{key}]*/{concept}` or `{prefix}[/{concept}/{key}]*/{concept}` |
+| **Vocabulary URI** (for vocabularies, ontologies, concept schemes, codelists and schema) | `{prefix}/def{/vocabulary*}` |
+| **Vocabulary Term URI** (for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema) | `{prefix}/def{/vocabulary*}/{term}` or `{prefix}}/def{/vocabulary*}#{term}` |
+| **Dataset URI** (for datasets) | `{prefix}/data{/dataset*}` |
+| **Data Item URI** (for data items within datasets) | `{prefix}/data{/dataset*}[/{concept}/{key}]*` |
 
 The revised guidance at [[1](#reference.URIPatternsV0.4)] deferred detailing URI patterns for INSPIRE spatial-objects to this document.
 
 ## URI Patterns for INSPIRE Spatial-Objects
-
 ### URI based INSPIRE namespaces
 
 From the generic pattern [[1](#reference.URIPatternsV0.4)]:
 
-`{prefix} = http://{domain}{/collection*}`
+**`{prefix} = http://{domain}{/collection*}`**
 
 and INSPIRE namespace identifier is formulated as:
 
-`{inspireNamespaceUri} = {prefix}[/so][/{class}]`
+**`{inspireNamespaceUri} = {prefix}[/so][/{class}]`**
 
 resulting in URI for INSPIRE spatial objects of the form:
 
-`{inspireNamespaceUri}/{localId}[:{versionId}] or
-{inspireNamespaceUri}/{localId}[/{versionId}] or
-{inspireNamespaceUri}/{localId}[/version/{versionId}]`
+**`{inspireNamespaceUri}/{localId}[:{versionId}]`** or  
+**`{inspireNamespaceUri}/{localId}[/{versionId}]`** or  
+**`{inspireNamespaceUri}/{localId}[/version/{versionId}]`**  
 
 ie. an overall pattern of:
 
-`http://{domain}{/collection*}[/so][/{class}]}/{localId}[:{versionId}] or
-http://{domain}{/collection*}[/so][/{class}]}/{localId}[/{versionId}] or 
-http://{domain}{/collection*}[/so][/{class}]}/{localId}[/version/{versionId}] or `
+**`http://{domain}{/collection*}[/so][/{class}]}/{localId}[:{versionId}]`** or  
+**`http://{domain}{/collection*}[/so][/{class}]}/{localId}[/{versionId}]`** or   
+**`http://{domain}{/collection*}[/so][/{class}]}/{localId}[/version/{versionId}]`** 
 
-Editorial Note: Ideally we need to resolve on a single pattern for combining **_{localId}_** and **_{versionId} _**for those cases where {versionId) is used. The ../version/.. gives more natural points for truncated URI to list available versions, while the ':' formulation is more succinct and restricts the {*localId}:{versionId}* combination to a single URI path segment.
+[**`Editorial Note:`** `Ideally we need to resolve on a single pattern for combining `**_`{localId}`_** `and` **_`{versionId}`_** `for those cases where `**_`{versionId}`_** `is used. The `**_`"../version/.."`_** `form gives more natural points for truncated URIs to list available versions, while the `**`':'`**` formulation is more succinct and restricts the `**_`{localId}:{versionId}`_**` combination to a single URI path segment.`]
 
 ### Non-URI INSPIRE Namespaces
 
