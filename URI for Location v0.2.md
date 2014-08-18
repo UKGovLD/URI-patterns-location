@@ -256,45 +256,45 @@ Note that **_`{theme}`_** and **_`{class}`_** components are made optional, whil
 
 The collection based approach to URI Patterns, presented in [[1](#reference.URIPatternsV0.4)], is motivate by a need to provide persistent URI for vocabulary, reference data and reference items ('things') within a shared URI spaces whilst at the same time enabling different data publishers to provide their own publishing infrastructure located elsewhere in URI space. Commonly available redirection or proxying infrastructure can be used to route requests made via published URIs conforming to the patterns in this document and its companion [[1](#reference.URIPatternsV0.4)] to infrastructure associated with a particular collection. The key to this is the left hand URI pattern in [[1](#reference.URIPatternsV0.4)] which seeks to formulate the 'key' for a redirection or proxy a simple prefix:
 
-`{prefix} = http://{domain}{/collection*}`
+**`{prefix} = http://{domain}{/collection*}`**
 
 Redirection or proxying access requests is then accomplished by prefix substitution. This works for both non-URI INSPIRE namespaces using the revised pattern for spatial-object URI where the prefix to be matched is:
 
-`http://location.data.gov.uk/{inspireNamespaceId}`
+**`http://location.data.gov.uk/{inspireNamespaceId}`**
 
 and for URI based INSPIRE namepaces that make use of the common *{prefix}* pattern above, i.e:
 
-`{prefix} = http://{domain}{/collection*}`
+**`{prefix} = http://{domain}{/collection*}`**
 
 Requests using non-URI INSPIRE identifiers, which when mapped to URI have a prefix of the form:
 
-`{prefix} = http://location.data.gov.uk/so/{theme}/{class}/{inspireNamespaceId}`
+**`{prefix} = http://location.data.gov.uk/so/{theme}/{class}/{inspireNamespaceId}`**
 
-can be routed on the basis of the **_{inspireNamespaceId} _**(ie. 4th) segment of the request URI.
+can be routed on the basis of the **_'{inspireNamespaceId}'_**(ie. 4th) segment of the request URI.
 
 ## URI Patterns for Spatial Things
 
 Spatial-things are the real-world phenomena that spatial-objects are an abstract representation of. Within INSPIRE, thematic references made by a coded property value using, for example, an airport or railway station code, are a way of establishing a relationship between a spatial-object and the 'thing' that it represents. Unfortunately, the INSPIRE data specification do not identify the attributes that carry thematic references in a systematic way. See "Annex I: Thematic Referencing in INSPIRE" for examples of thematic referencing present in INSPIRE Annex 1 themes.
 
-Where possible, thematic references should be reconciled and resolved to an Identifier URI for an existing reference item (see [[1](#reference.URIPatternsV0.4)] or "Revised URI Patterns" above).
+Where possible, thematic references should be reconciled and resolved to an Identifier URI for an existing reference item (see [[1](#reference.URIPatternsV0.4)] or "[Revised URI Patterns](#revised-generic-uri-patterns)" above).
 
-In cases where no-such commonly used Identifier URI (or URI Set) are available, it is preferable that at least a minimal representation of a URI Set corresponding to the reference items (real-world phenomena) is created as part of the published data collection. Such minimal representations should contain a label (**_skos:prefLabel_**) in one or more languages, a notation (**_skos:notation_**) or sub-property thereof bearing the coded value of the thematic reference, an RDF type (common to members of the URI Set) and optionally a descriptive comment (**_rdfs:comment_**) intended to communicate clearly what 'thing' is being referenced to human consumer of the data. Ideally such URI Sets should be published using persistent URI maintained by an authoritative source, however, that is not aways possible.
+In cases where no-such commonly used Identifier URI (or URI Set) are available, it is preferable that at least a minimal representation of a URI Set corresponding to the reference items (real-world phenomena) is created as part of the published data collection. Such minimal representations should contain a label (**_`skos:prefLabel`_**) in one or more languages, a notation (**_`skos:notation`_**) or sub-property thereof bearing the coded value of the thematic reference, an RDF type (common to members of the URI Set) and optionally a descriptive comment (**_`rdfs:comment`_**) intended to communicate clearly what 'thing' is being referenced to human consumer of the data. Ideally such URI Sets should be published using persistent URI maintained by an authoritative source, however, that is not aways possible.
 
 When a URI Sets needs to be created by a non-authoritative sources as part of a data publication
 
-`	{prefix}/id[/{concept}]/{codeset}/{codepoint}`
+**`{prefix}/id[/{concept}]/{codeset}/{codepoint}`**
 
 which fully expands to either:
 
-* For http[s] URI based INSPIRE namespaces:
-`http://{domain}{/collection*}/id[/{concept}]/{codeset}/{codepoint}`
+* For http[s] URI based INSPIRE namespaces:  
+**`http://{domain}{/collection*}/id[/{concept}]/{codeset}/{codepoint}`**
 
-* For non-URI based INSPIRE namespaces :
-`http://location.data.gov.uk/{inspireNamespaceId}/id[/{concept}]/{codeset}/{codepoint} or
-http://location.data.gov.uk/id/{theme}/{concept}/{codeset}/{codepoint}
-`For collection based or legacy **_location.data.gov.uk_** URI patterns respectively
+* For non-URI based INSPIRE namespaces :  
+**`http://location.data.gov.uk/{inspireNamespaceId}/id[/{concept}]/{codeset}/{codepoint}`** or  
+**`http://location.data.gov.uk/id/{theme}/{concept}/{codeset}/{codepoint}`**  
+For collection based or legacy **_location.data.gov.uk_** URI patterns respectively
 
-The use of URI based INSPIRE namespace is preferred over the deprecated use of non-URI based INSPIRE namespaces (with collection based prefixing preferred over legacy patterns).
+The use of URI based INSPIRE namespace identifiers is preferred over the deprecated use of non-URI based INSPIRE namespaces (with collection based prefixing preferred over legacy patterns).
 
 ## URI Patterns for INSPIRE derived Vocabulary Terms
 
