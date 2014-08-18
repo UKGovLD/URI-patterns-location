@@ -9,9 +9,8 @@ v0.2
 7th November 2013
 
 **Editor:** Stuart Williams (skw@epimorphics.com)
-**Drafted by:** the UK Government Linked Data Working Group (UKGovLD), including representatives from public-sector departments, agencies and local government, linked-data businesses and the broader linked-data community. 
 
-[TOC]
+**Drafted by:** the UK Government Linked Data Working Group (UKGovLD), including representatives from public-sector departments, agencies and local government, linked-data businesses and the broader linked-data community. 
 
 # Introduction
 
