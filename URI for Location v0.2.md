@@ -117,31 +117,56 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
 
 ## References
 
-<a name="reference.URIPatternsV0.4" />[1]	"URI Patterns v0.4" 
-[http://tinyurl.com/UKGovLD-revisedUriPatterns](http://tinyurl.com/UKGovLD-revisedUriPatterns) (temporary)
-
-<a name="reference.URIforLocationV1.0"/>[2]	"Designing URI Sets for Location" 
-[http://data.gov.uk/library/designing-uri-sets-for-location](http://data.gov.uk/library/designing-uri-sets-for-location)
-
-<a name="reference.INSPIRE-Glossary"/>[3]	INSPIRE Glossary 
-[https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY](https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY)
-
-<a name="reference.INSPIRE-GCM"/>[4]	INSPIRE Generic Conceptual Model
-[http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf](http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf)
-
-<a name="reference.ApplicationSchemaCox"/>[5]	"Formalization of Application Schemas" Simon Cox, CSIRO
-[https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization](https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization)
-
-<a name="reference.ISO19103"/>[6]	ISO 19103: 2005 	"Geographic information -- Conceptual schema language"
-
-<a name="reference.ISO19109"/>[7]	ISO 19109:2005 	"Geographic information -- Rules for application schema"
-
-<a name="reference.ISO19150-1"/>[8]	ISO 19150-1:2012	"Geographic information — Ontology — Part 1: Framework"
-
-<a name="reference.ISO19150-2"/>[9]	ISO/DIS 19150-2	"Geographic information -- Ontology -- Part 2: Rules for developing ontologies in the Web Ontology Language (OWL)"
-
-<a name="reference.GeoSparql"/>[10]	"GeoSPARQL - A Geographic Query Language for RDF Data", Open-Geospatial Consortium (OGC)
+<table>
+  <tr>
+    <td><a name="reference.URIPatternsV0.4" />[1]</td>
+    <td>"URI Patterns v0.4"<br />
+        [http://tinyurl.com/UKGovLD-revisedUriPatterns](http://tinyurl.com/UKGovLD-revisedUriPatterns) (temporary) 
+    </td>
+  </tr>
+  <tr>
+    <td><a name="reference.URIforLocationV1.0"/>[2]</td> 
+    <td>"Designing URI Sets for Location"<br />
+        [http://data.gov.uk/library/designing-uri-sets-for-location](http://data.gov.uk/library/designing-uri-sets-for-location)
+    </td>
+  </tr>
+  <tr>
+    <td><a name="reference.INSPIRE-Glossary"/>[3]</td>
+    <td>INSPIRE Glossary<br />[https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY](https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY
+    </td>
+  </tr>
+  <tr>
+    <td><a name="reference.INSPIRE-GCM"/>[4]<tr>
+    <td>INSPIRE Generic Conceptual Model<br /> [http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf](http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf)
+    </td>
+  </tr>
+  <tr>
+    <td><a name="reference.ApplicationSchemaCox"/>[5]</td>
+    <td>"Formalization of Application Schemas" Simon Cox, CSIRO<br /> [https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization](https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization)</td>
+  </tr>
+  <tr>
+    <td><a name="reference.ISO19103"/>[6]</td>
+    <td>ISO 19103: 2005 	"Geographic information -- Conceptual schema language"</td>
+  <tr/>
+  <tr>
+    <td><a name="reference.ISO19109"/>[7]</td>
+    <td>ISO 19109:2005 	"Geographic information -- Rules for application schema"</td>
+  </tr>
+  <tr>
+    <td><a name="reference.ISO19150-1"/>[8]</td>
+    <td>ISO 19150-1:2012	"Geographic information — Ontology — Part 1: Framework"</td>
+  <tr/>
+  <tr>
+    <td><a name="reference.ISO19150-2"/>[9]</td>
+    <td>ISO/DIS 19150-2	"Geographic information -- Ontology -- Part 2: Rules for developing ontologies in the Web Ontology Language (OWL)"</td>
+  </tr>
+  <tr>
+    <td><a name="reference.GeoSparql"/>[10]<td>
+    <td>"GeoSPARQL - A Geographic Query Language for RDF Data", Open-Geospatial Consortium (OGC)<br />
 [http://www.opengeospatial.org/standards/geosparql](http://www.opengeospatial.org/standards/geosparql)
+     </td>
+  </tr>
+</table>
 
 ## Glossary
 
