@@ -4,17 +4,15 @@ _The temporary master version of this document (as in correctly formatted) is he
 
 
 
-URI for Location
+# URI for Location
 
 v0.2
 
 7th November 2013
 
-**Editor**: Stuart Williams (skw@epimorphics.com)
+**Editor:** Stuart Williams (skw@epimorphics.com)
 
-**Drafted by: **the UK Government Linked Data Working Group (UKGovLD), including representatives from public-sector departments, agencies and local government, linked-data businesses and the broader linked-data community. 
-
-
+**Drafted by:**the UK Government Linked Data Working Group (UKGovLD), including representatives from public-sector departments, agencies and local government, linked-data businesses and the broader linked-data community. 
 
 
 # Introduction
@@ -27,11 +25,11 @@ The EU INSPIRE Directive calls for:
 
 It goes on to defined a spatial object as:
 
-"... an abstract representation of a real-world phenomenon related to a specific location or geographical area"[3]
+"... an abstract representation of a real-world phenomenon related to a specific location or geographical area"[[3](#reference.INSPIRE-Glossary)]
 
 This paper is focussed on the use of http[s] URI by the UK public sector to meet its INSPIRE objectives.
 
-This paper updates the URI patterns provided in earlier guidance [2] in line with changes proposed for the general use of URI patterns for data publishing within the UK public sector [1] and making use of changes in INSPIRE that allow full URI to be used as INSPIRE namespaces (NOTE:  Previously character restrictions on the 'spelling' of INSPIRE namespaces prevented URI in general and HTTP URI in particular from being used as INSPIRE namespaces.).
+This paper updates the URI patterns provided in earlier guidance [[2](#reference.URIforLocationV1.0)] in line with changes proposed for the general use of URI patterns for data publishing within the UK public sector [[1](#reference.URIPatternsV0.4)] and making use of changes in INSPIRE that allow full URI to be used as INSPIRE namespaces (NOTE:  Previously character restrictions on the 'spelling' of INSPIRE namespaces prevented URI in general and HTTP URI in particular from being used as INSPIRE namespaces.).
 
 ## INSPIRE Spatial Objects
 
@@ -55,7 +53,7 @@ INSPIRE documents discuss three forms of identifiers:
 
 **Thematic identifiers** are typically conveyed as coded attributes of a spatial object, for example a railway station or airport code from a reservation system, or a waterbody identifier from a catchment planning system. When given or available they 'identify' the real-world phenomena for which the spatial-object is abstract representation. Ideally thematic identifiers where available should be used to form URI for the real-world phenomena to which they pertain. They provide away of associating multiple spatial-objects that pertain to the same real-world phenomena. See xxx
 
-**Geographic identifiers**: the INSPIRE Generic Conceptual Model [4] defines geographical identifiers as:
+**Geographic identifiers**: the INSPIRE Generic Conceptual Model [[4](#reference.INSPIRE-GCM)] defines geographical identifiers as:
 
 "spatial reference in the form of a label or code that identifies a location" 
 
@@ -63,7 +61,7 @@ and gives place names and post codes as examples of geographic identifiers. Geog
 
 ## location.data.gov.uk
 
-**http://location.data.gov.uk** was established under the earlier guidance [2] has two primary roles:
+**http://location.data.gov.uk** was established under the earlier guidance [[2](#reference.URIforLocationV1.0)] has two primary roles:
 
 1. as a base URI for the identification of INSPIRE spatial-objects 
 
@@ -87,7 +85,7 @@ This original pattern for publishing INSPIRE spatial-objects is awkward in pract
 
 The character constraints associated with the components of an INSPIRE spatial-object identifiers have been relaxed.It is now possible to use URI, particularly dereferencable URI such as an HTTP or HTTPS URI, as INSPIRE namespace identifiers. 
 
-Given this change, there is no longer a need for **http://location.data.gov.uk **to serve as the base URI for spatial-object publication. Instead the left hand part of a URI assigned for a spatial-object can serve the role of an INSPIRE namespace identifier (see section "URI based INSPIRE namespaces" below). In this way spatial-objects can be published as part of a data collection using URI patterns aligned with the common guidance [1].
+Given this change, there is no longer a need for **http://location.data.gov.uk **to serve as the base URI for spatial-object publication. Instead the left hand part of a URI assigned for a spatial-object can serve the role of an INSPIRE namespace identifier (see section "URI based INSPIRE namespaces" below). In this way spatial-objects can be published as part of a data collection using URI patterns aligned with the common guidance [[1](#reference.URIPatternsV0.4)].
 
 **`http://{domain}{/collection*}[/so][/{class}]/{inspireLocalId}[/{inspireVersionId}**]`
 
@@ -119,30 +117,30 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
 
 ## References
 
-[1]	"URI Patterns v0.4" 
+<a name="reference.URIPatternsV0.4" />[1]	"URI Patterns v0.4" 
 [http://tinyurl.com/UKGovLD-revisedUriPatterns](http://tinyurl.com/UKGovLD-revisedUriPatterns) (temporary)
 
-[2]	"Designing URI Sets for Location" 
+<a name="reference.URIforLocationV1.0"/>[2]	"Designing URI Sets for Location" 
 [http://data.gov.uk/library/designing-uri-sets-for-location](http://data.gov.uk/library/designing-uri-sets-for-location)
 
-[3]	INSPIRE Glossary 
+<a name="reference.INSPIRE-Glossary"/>[3]	INSPIRE Glossary 
 [https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY](https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY)
 
-[4]	INSPIRE Generic Conceptual Model
+<a name="reference.INSPIRE-GCM"/>[4]	INSPIRE Generic Conceptual Model
 [http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf](http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf)
 
-[5]	"Formalization of Application Schemas" Simon Cox, CSIRO
+<a name="reference.ApplicationSchemaCox"/>[5]	"Formalization of Application Schemas" Simon Cox, CSIRO
 [https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization](https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization)
 
-[6]	ISO 19103: 2005 	"Geographic information -- Conceptual schema language"
+<a name="reference.ISO19103"/>[6]	ISO 19103: 2005 	"Geographic information -- Conceptual schema language"
 
-[7]	ISO 19109:2005 	"Geographic information -- Rules for application schema"
+<a name="reference.ISO19109"/>[7]	ISO 19109:2005 	"Geographic information -- Rules for application schema"
 
-[8]	ISO 19150-1:2012	"Geographic information — Ontology — Part 1: Framework"
+<a name="reference.ISO19150-1"/>[8]	ISO 19150-1:2012	"Geographic information — Ontology — Part 1: Framework"
 
-[9]	ISO/DIS 19150-2	"Geographic information -- Ontology -- Part 2: Rules for developing ontologies in the Web Ontology Language (OWL)"
+<a name="reference.ISO19150-2"/>[9]	ISO/DIS 19150-2	"Geographic information -- Ontology -- Part 2: Rules for developing ontologies in the Web Ontology Language (OWL)"
 
-[10]	"GeoSPARQL - A Geographic Query Language for RDF Data", Open-Geospatial Consortium (OGC)
+<a name="reference.GeoSparql"/>[10]	"GeoSPARQL - A Geographic Query Language for RDF Data", Open-Geospatial Consortium (OGC)
 [http://www.opengeospatial.org/standards/geosparql](http://www.opengeospatial.org/standards/geosparql)
 
 ## Glossary
@@ -199,11 +197,11 @@ URIs, about a single concept, governed from a single source.</td>
 
 # Revised Generic URI Patterns
 
-The revised URI pattern guidance [1] a defines a common left-hand side URI pattern of:
+The revised URI pattern guidance [[1](#reference.URIPatternsV0.4)] a defines a common left-hand side URI pattern of:
 
 `{prefix} = http://{domain}{/collection*}`
 
-along with a collection of right-hand side patterns for: URI Sets; Reference Items (members of URI sets) and their reference documents; vocabularies and vocabulary terms; data sets and data items. These patterns are summarised below and discussed in more detail in [1]
+along with a collection of right-hand side patterns for: URI Sets; Reference Items (members of URI sets) and their reference documents; vocabularies and vocabulary terms; data sets and data items. These patterns are summarised below and discussed in more detail in [[1](#reference.URIPatternsV0.4)]
 
 <table>
   <tr>
@@ -255,13 +253,13 @@ optionally, reference data for lists of reference items
 </table>
 
 
-The revised guidance at [1] deferred detailing URI patterns for INSPIRE spatial-objects to this document.
+The revised guidance at [[1](#reference.URIPatternsV0.4)] deferred detailing URI patterns for INSPIRE spatial-objects to this document.
 
 ## URI Patterns for INSPIRE Spatial-Objects
 
 ### URI based INSPIRE namespaces
 
-From the generic pattern [1]:
+From the generic pattern [[1](#reference.URIPatternsV0.4)]:
 
 `{prefix} = http://{domain}{/collection*}`
 
@@ -285,11 +283,11 @@ Editorial Note: Ideally we need to resolve on a single pattern for combining **_
 
 ### Non-URI INSPIRE Namespaces
 
-Earlier guidance [2] provided for the mapping of non-URI based INSPIRE namespace identifiers URI space as follows:
+Earlier guidance [[2](#reference.URIforLocationV1.0)] provided for the mapping of non-URI based INSPIRE namespace identifiers URI space as follows:
 
 `{inspireNamespaceUri} = http://location.data.gov.uk/so/{theme}/{class}/{inspireNamespaceId}`
 
-Existing URI that use this pattern continue to be supported, however its use for new deployments it is **deprecated** either in favour of URI based INSPIRE namespaces (see previous section) or the following patterns which better aligns with the collection based approach of the revised URI patterns [1].
+Existing URI that use this pattern continue to be supported, however its use for new deployments it is **deprecated** either in favour of URI based INSPIRE namespaces (see previous section) or the following patterns which better aligns with the collection based approach of the revised URI patterns [[1](#reference.URIPatternsV0.4)].
 
 `{inspireNamespaceUri} = http://location.data.gov.uk/{inspireNamespaceId}/so[/{theme}][/{class}]`
 
@@ -304,7 +302,7 @@ Note that **_{theme}_** and **_{class}_** components are made optional, whilst t
 
 ### Indirect or Proxied Access to Spatial-Objects
 
-The collection based approach to URI Patterns, presented in [1], is motivate by a need to provide persistent URI for vocabulary, reference data and reference items ('things') within a shared URI spaces whilst at the same time enabling different data publishers to provide their own publishing infrastructure located elsewhere in URI space. Commonly available redirection or proxying infrastructure can be used to route requests made via published URIs conforming to the patterns in this document and its companion [1] to infrastructure associated with a particular collection. The key to this is the left hand URI pattern in [1] which seeks to formulate the 'key' for a redirection or proxy a simple prefix:
+The collection based approach to URI Patterns, presented in [[1](#reference.URIPatternsV0.4)], is motivate by a need to provide persistent URI for vocabulary, reference data and reference items ('things') within a shared URI spaces whilst at the same time enabling different data publishers to provide their own publishing infrastructure located elsewhere in URI space. Commonly available redirection or proxying infrastructure can be used to route requests made via published URIs conforming to the patterns in this document and its companion [[1](#reference.URIPatternsV0.4)] to infrastructure associated with a particular collection. The key to this is the left hand URI pattern in [[1](#reference.URIPatternsV0.4)] which seeks to formulate the 'key' for a redirection or proxy a simple prefix:
 
 `{prefix} = http://{domain}{/collection*}`
 
@@ -326,7 +324,7 @@ can be routed on the basis of the **_{inspireNamespaceId} _**(ie. 4th) segment o
 
 Spatial-things are the real-world phenomena that spatial-objects are an abstract representation of. Within INSPIRE, thematic references made by a coded property value using, for example, an airport or railway station code, are a way of establishing a relationship between a spatial-object and the 'thing' that it represents. Unfortunately, the INSPIRE data specification do not identify the attributes that carry thematic references in a systematic way. See "Annex I: Thematic Referencing in INSPIRE" for examples of thematic referencing present in INSPIRE Annex 1 themes.
 
-Where possible, thematic references should be reconciled and resolved to an Identifier URI for an existing reference item (see [1] or "Revised URI Patterns" above).
+Where possible, thematic references should be reconciled and resolved to an Identifier URI for an existing reference item (see [[1](#reference.URIPatternsV0.4)] or "Revised URI Patterns" above).
 
 In cases where no-such commonly used Identifier URI (or URI Set) are available, it is preferable that at least a minimal representation of a URI Set corresponding to the reference items (real-world phenomena) is created as part of the published data collection. Such minimal representations should contain a label (**_skos:prefLabel_**) in one or more languages, a notation (**_skos:notation_**) or sub-property thereof bearing the coded value of the thematic reference, an RDF type (common to members of the URI Set) and optionally a descriptive comment (**_rdfs:comment_**) intended to communicate clearly what 'thing' is being referenced to human consumer of the data. Ideally such URI Sets should be published using persistent URI maintained by an authoritative source, however, that is not aways possible.
 
@@ -348,7 +346,7 @@ The use of URI based INSPIRE namespace is preferred over the deprecated use of n
 
 ## URI Patterns for INSPIRE derived Vocabulary Terms
 
-INSPIRE data specifications (NOTE:  http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2) are defined as ISO 19103 [6] and ISO 19109 [7] application schema. ISO 19150 [8,9] provides rules for deriving OWL vocabularies (ontologies) from the corresponding application scheme. In general, ISO19150 part 2 [9] maps:
+INSPIRE data specifications (NOTE:  http://inspire.jrc.ec.europa.eu/index.cfm/pageid/2) are defined as ISO 19103 [[6](#reference.ISO19103)] and ISO 19109 [[7](#reference.ISO19109)] application schema. ISO 19150 [8,9] provides rules for deriving OWL vocabularies (ontologies) from the corresponding application scheme. In general, ISO19150 part 2 [[9](#reference.ISO19150-2)] maps:
 
 <table>
   <tr>
@@ -561,11 +559,11 @@ HydroIdentifiers are composed of “classificationScheme”, “namespace” and
 
 # Annex II Things, Spatial-Objects and Versions
 
-INSPIRE spatial-objects are information objects that provide "...an abstract representation of a real-world phenomenon related to a specific location or geographical area" [[3]](#heading=h.2s8eyo1). Very loosely, we can think of a spatial-object as a 'document' that describes some aspects of part of the real-world. eg. the diagram below illustrates two different abstractions of Manchester Piccadilly Railway Station. As a **_RailwayStationArea_** indicating its maximum spatial extend and as a **_RailwayStationNode_** indicating position within a transport network made up of **_TransportNode_** and **_TransportLink _**objects.
+INSPIRE spatial-objects are information objects that provide "...an abstract representation of a real-world phenomenon related to a specific location or geographical area" [[3](#reference.INSPIRE-Glossary)]. Very loosely, we can think of a spatial-object as a 'document' that describes some aspects of part of the real-world. eg. the diagram below illustrates two different abstractions of Manchester Piccadilly Railway Station. As a **_RailwayStationArea_** indicating its maximum spatial extend and as a **_RailwayStationNode_** indicating position within a transport network made up of **_TransportNode_** and **_TransportLink _**objects.
 
 ![image alt text](image_1.png)
 
-The INSPIRE Generic Conceptual Model[4] provides a framework for defining spatial object types (aka feature types). The INSPIRE GCM in-turn draws on the General Feature Model of "ISO 19109:2005 Application Schema". INSPIRE thematic data-specifications are formulated as ISO 19109 application schema that define feature types (aka spatial-object types), data types, union types (one of a number of alternates), enumerations (of string values) and codelists (see [5] for a gentle introduction to the ISO 19109 application schema). For example the UML diagrams below illustrate the **_RailwayStationNode_** and **_RailwayStationArea_** feature type definitions that are part of the INSPIRE data specification for Railway Transport Networks within the Transport Network (TN) theme.
+The INSPIRE Generic Conceptual Model [[4](#reference.INSPIRE-GCM)] provides a framework for defining spatial object types (aka feature types). The INSPIRE GCM in-turn draws on the General Feature Model of "ISO 19109:2005 Application Schema". INSPIRE thematic data-specifications are formulated as ISO 19109 application schema that define feature types (aka spatial-object types), data types, union types (one of a number of alternates), enumerations (of string values) and codelists (see [[5](#reference.ApplicationSchemaCox)] for a gentle introduction to the ISO 19109 application schema). For example the UML diagrams below illustrate the **_RailwayStationNode_** and **_RailwayStationArea_** feature type definitions that are part of the INSPIRE data specification for Railway Transport Networks within the Transport Network (TN) theme.
 
 ![image alt text](image_2.png)![image alt text](image_3.png)
 
@@ -636,7 +634,7 @@ Whilst for some (this author included) it would be more natural that an unversio
 
 By virtue of the nature of the UML based modelling approach used in the definition of the INSPIRE data specifications, property definitions are local to the feature type in which they are defined (and derived feature types). There is not a common high-level, abstract feature type from which all other feature (spatial-object) types are derived. Generally, at some suitably high level in the feature type hierarchy, INSPIRE data specifications typically give a consistent redefinition of the following properties:
 
-The descriptions in the table below are taken from Recommendations 17 and 33 within the INSPIRE GCM [4]
+The descriptions in the table below are taken from Recommendations 17 and 33 within the INSPIRE GCM [[4](#reference.INSPIRE-GCM)]
 
 <table>
   <tr>
