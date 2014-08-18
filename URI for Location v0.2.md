@@ -10,7 +10,7 @@ v0.2
 
 **Editor:** Stuart Williams (skw@epimorphics.com)
 
-**Drafted by:**the UK Government Linked Data Working Group (UKGovLD), including representatives from public-sector departments, agencies and local government, linked-data businesses and the broader linked-data community. 
+**Drafted by:** the UK Government Linked Data Working Group (UKGovLD), including representatives from public-sector departments, agencies and local government, linked-data businesses and the broader linked-data community. 
 
 
 # Introduction
@@ -231,7 +231,7 @@ ie. an overall pattern of:
 **`http://{domain}{/collection*}[/so][/{class}]}/{localId}[/{versionId}]`** or   
 **`http://{domain}{/collection*}[/so][/{class}]}/{localId}[/version/{versionId}]`** 
 
-[**`Editorial Note:`** `Ideally we need to resolve on a single pattern for combining `**_`{localId}`_** `and` **_`{versionId}`_** `for those cases where `**_`{versionId}`_** `is used. The `**_`"../version/.."`_** `form gives more natural points for truncated URIs to list available versions, while the `**`':'`**` formulation is more succinct and restricts the `**_`{localId}:{versionId}`_**` combination to a single URI path segment.`]
+[**`Editorial Note:`** `Ideally we need to resolve on a single pattern for combining `**`{localId}`** `and` **`{versionId}`** `for those cases where `**`{versionId}`** `is used. The `**`"../version/.."`** `form gives more natural points for truncated URIs to list available versions, while the `**`':'`**` formulation is more succinct and restricts the `**`{localId}:{versionId}`**` combination to a single URI path segment.`]
 
 ### Non-URI INSPIRE Namespaces
 
@@ -243,14 +243,14 @@ Existing URI that use this pattern continue to be supported, however its use for
 
 **`{inspireNamespaceUri} = http://location.data.gov.uk/{inspireNamespaceId}/so[/{theme}][/{class}]`**
 
-Here **_`{inspireNamespaceId}`_** serves the role of a **_`{/collection*}`_** in the **_`{prefix}`_**component of the generic pattern. The rest of the pattern then follows from the URI based patterns of the previous section:
+Here **`{inspireNamespaceId}`** serves the role of a **`{/collection*}`** in the **`{prefix}`**component of the generic pattern. The rest of the pattern then follows from the URI based patterns of the previous section:
 
 ie. an overall pattern of:
 
 **`http://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/localId}[:{versionId}]`** or  
 **`http://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/{localId}[/version/{versionId}]`**
 
-Note that **_`{theme}`_** and **_`{class}`_** components are made optional, whilst the contribute useful 'hints' to users about the kind of object being referenced, they do not contribute to its identity which is based on the **_`inspireNamespaceId`_**, **_`localId`_** and **_`versionId`_** fields of an INSPIRE spatial object identifier.
+Note that **`{theme}`** and **`{class}`** components are made optional, whilst the contribute useful 'hints' to users about the kind of object being referenced, they do not contribute to its identity which is based on the **`inspireNamespaceId`**, **`localId`** and **`versionId`** fields of an INSPIRE spatial object identifier.
 
 ### Indirect or Proxied Access to Spatial-Objects
 
@@ -278,7 +278,7 @@ Spatial-things are the real-world phenomena that spatial-objects are an abstract
 
 Where possible, thematic references should be reconciled and resolved to an Identifier URI for an existing reference item (see [[1](#reference.URIPatternsV0.4)] or "[Revised URI Patterns](#revised-generic-uri-patterns)" above).
 
-In cases where no-such commonly used Identifier URI (or URI Set) are available, it is preferable that at least a minimal representation of a URI Set corresponding to the reference items (real-world phenomena) is created as part of the published data collection. Such minimal representations should contain a label (**_`skos:prefLabel`_**) in one or more languages, a notation (**_`skos:notation`_**) or sub-property thereof bearing the coded value of the thematic reference, an RDF type (common to members of the URI Set) and optionally a descriptive comment (**_`rdfs:comment`_**) intended to communicate clearly what 'thing' is being referenced to human consumer of the data. Ideally such URI Sets should be published using persistent URI maintained by an authoritative source, however, that is not aways possible.
+In cases where no-such commonly used Identifier URI (or URI Set) are available, it is preferable that at least a minimal representation of a URI Set corresponding to the reference items (real-world phenomena) is created as part of the published data collection. Such minimal representations should contain a label (**`skos:prefLabel`**) in one or more languages, a notation (**`skos:notation`**) or sub-property thereof bearing the coded value of the thematic reference, an RDF type (common to members of the URI Set) and optionally a descriptive comment (**`rdfs:comment`**) intended to communicate clearly what 'thing' is being referenced to human consumer of the data. Ideally such URI Sets should be published using persistent URI maintained by an authoritative source, however, that is not aways possible.
 
 When a URI Sets needs to be created by a non-authoritative sources as part of a data publication
 
@@ -374,7 +374,7 @@ The table below illustrate the application of these patterns to the creation of 
 | http://location.data.gov.uk/inspire/common/def/inspire/validFrom | INSPIRE wide reusable `validFrom` property |
 | http://location.data.gov.uk/inspire/common/def/inspire/inspireId | INSPIRE wide reusable `inspireId` property |
 
-Note that because **_`validFrom`_**, **_`validTo`_** and **_`inspireId`_** are used consistently across a large number of INSPIRE application schema, they have been defined (here) as properties defined within a 'pseudo' application schema `'inspire'` within a collection at `http://location.data.gov.uk/inspire/common`
+Note that because **`validFrom`**, **`validTo`** and **`inspireId`** are used consistently across a large number of INSPIRE application schema, they have been defined (here) as properties defined within a 'pseudo' application schema `'inspire'` within a collection at `http://location.data.gov.uk/inspire/common`
 
 # Annex I: Thematic Referencing in INSPIRE
 
@@ -400,36 +400,36 @@ The table below summarises the occurrences of thematic referencing apparent in t
 
 # Annex II Things, Spatial-Objects and Versions
 
-INSPIRE spatial-objects are information objects that provide "...an abstract representation of a real-world phenomenon related to a specific location or geographical area" [[3](#reference.INSPIRE-Glossary)]. Very loosely, we can think of a spatial-object as a 'document' that describes some aspects of part of the real-world. eg. the diagram below illustrates two different abstractions of Manchester Piccadilly Railway Station. As a **_`RailwayStationArea`_** indicating its maximum spatial extend and as a **_`RailwayStationNode`_** indicating position within a transport network made up of **_`TransportNode`_** and **_`TransportLink`_** objects.
+INSPIRE spatial-objects are information objects that provide "...an abstract representation of a real-world phenomenon related to a specific location or geographical area" [[3](#reference.INSPIRE-Glossary)]. Very loosely, we can think of a spatial-object as a 'document' that describes some aspects of part of the real-world. eg. the diagram below illustrates two different abstractions of Manchester Piccadilly Railway Station. As a **`RailwayStationArea`** indicating its maximum spatial extend and as a **`RailwayStationNode`** indicating position within a transport network made up of **`TransportNode`** and **`TransportLink`** objects.
 
 ![image alt text](image_1.png)
 
-The INSPIRE Generic Conceptual Model [[4](#reference.INSPIRE-GCM)] provides a framework for defining spatial object types (aka feature types). The INSPIRE GCM in-turn draws on the General Feature Model of "ISO 19109:2005 Application Schema". INSPIRE thematic data-specifications are formulated as ISO 19109 application schema that define feature types (aka spatial-object types), data types, union types (one of a number of alternates), enumerations (of string values) and codelists (see [[5](#reference.ApplicationSchemaCox)] for a gentle introduction to the ISO 19109 application schema). For example the UML diagrams below illustrate the **_`RailwayStationNode`_** and **_`RailwayStationArea`_** feature type definitions that are part of the INSPIRE data specification for Railway Transport Networks within the Transport Network (TN) theme.
+The INSPIRE Generic Conceptual Model [[4](#reference.INSPIRE-GCM)] provides a framework for defining spatial object types (aka feature types). The INSPIRE GCM in-turn draws on the General Feature Model of "ISO 19109:2005 Application Schema". INSPIRE thematic data-specifications are formulated as ISO 19109 application schema that define feature types (aka spatial-object types), data types, union types (one of a number of alternates), enumerations (of string values) and codelists (see [[5](#reference.ApplicationSchemaCox)] for a gentle introduction to the ISO 19109 application schema). For example the UML diagrams below illustrate the **`RailwayStationNode`** and **`RailwayStationArea`** feature type definitions that are part of the INSPIRE data specification for Railway Transport Networks within the Transport Network (TN) theme.
 
 ![image alt text](image_2.png)![image alt text](image_3.png)
 
-The diagrams and models above illustrate a situation where there can be multiple spatial-objects (feature instances) that present different aspects of the same real world phenomenon, Manchester Piccadilly Railway Station in this case. In general there can be multiple publishers of spatial-objects describing the same or different aspects (e.g. station nodes versus station areas) of the same phenomena. INSPIRE uses thematic identifiers or codes, in this case the **_`stationCode`_** property, to indicate the real-world phenomena that the objects describe. At the very least thematic identifiers are a means to indicate that spatial-objects that describe (aspects of) the same thing (Manchester Piccadilly Railway Station).
+The diagrams and models above illustrate a situation where there can be multiple spatial-objects (feature instances) that present different aspects of the same real world phenomenon, Manchester Piccadilly Railway Station in this case. In general there can be multiple publishers of spatial-objects describing the same or different aspects (e.g. station nodes versus station areas) of the same phenomena. INSPIRE uses thematic identifiers or codes, in this case the **`stationCode`** property, to indicate the real-world phenomena that the objects describe. At the very least thematic identifiers are a means to indicate that spatial-objects that describe (aspects of) the same thing (Manchester Piccadilly Railway Station).
 
-Within INSPIRE spatial-objects (feature-instances) the properties **_`validFrom`_** and **_`validTo`_** are generally used to indicate the lifetime of the modelled real-world phenomena i.e. the temporal interval during which Manchester Piccadilly Railway Station exists in the world. We can see from its wikipedia entry [[**g**](#footnote.g)] that it was first opened in 1842 as "London Road Station" and has been rebuilt, expanded and renovated several times. It was named "Manchester Piccadilly Station" in 1960. Capturing this ongoing change over time is more complex than the apparent single-current version model presented so far.
+Within INSPIRE spatial-objects (feature-instances) the properties **`validFrom`** and **`validTo`** are generally used to indicate the lifetime of the modelled real-world phenomena i.e. the temporal interval during which Manchester Piccadilly Railway Station exists in the world. We can see from its wikipedia entry [[**g**](#footnote.g)] that it was first opened in 1842 as "London Road Station" and has been rebuilt, expanded and renovated several times. It was named "Manchester Piccadilly Station" in 1960. Capturing this ongoing change over time is more complex than the apparent single-current version model presented so far.
 
 <a name="footnote.g">**[g]**</a> http://en.wikipedia.org/wiki/Manchester_Piccadilly_station
 
 ## Versioned Spatial Objects
 
-INSPIRE identifiers provide for an optional **_`versionId`_** field. Within the definition of the INSPIRE GCM datatype **_`Identifier`_**, **_`versionId`_** is tagged both as **_`lifecycleInfo`_** (see below) and **_`voidable` _**with multiplicity `0..1`. This latter covers that cases where there is a **_`versionId`_**, but it is not known (i.e. void) and where **_`versionId` _**is not used (multiplicity of zero).
+INSPIRE identifiers provide for an optional **`versionId`** field. Within the definition of the INSPIRE GCM datatype **`Identifier`**, **`versionId`** is tagged both as **`lifecycleInfo`** (see below) and **`voidable`**with multiplicity `0..1`. This latter covers that cases where there is a **`versionId`**, but it is not known (i.e. void) and where **`versionId`**is not used (multiplicity of zero).
 
 ![image alt text](image_4.png)
 
-In situations where the optional **_`versionId`_** is not used, the spatial object can be thought of as a container of object state. This state is generally mutable to allow for change. The **_`namespace`_** and **_`localId`_** fields are used designate that 'single', mutable, container. Typically a collection of spatial-objects (a.k.a. feature instances) is released as an internally consistent dataset or feature collection. External references to the objects are made without any qualifying **_`versionId`_**.
+In situations where the optional **`versionId`** is not used, the spatial object can be thought of as a container of object state. This state is generally mutable to allow for change. The **`namespace`** and **`localId`** fields are used designate that 'single', mutable, container. Typically a collection of spatial-objects (a.k.a. feature instances) is released as an internally consistent dataset or feature collection. External references to the objects are made without any qualifying **`versionId`**.
 
-A small change to this approach is to include a **_`versionId`_** as part of an objects identifier. **_`versionId`_** is then updated after each episode of change (NOTE:  By 'episode of change' we mean a series of changes that are made as one.) to the object's state. Ideally there is a means to order **_`versionIds`_** such that 
+A small change to this approach is to include a **`versionId`** as part of an objects identifier. **`versionId`** is then updated after each episode of change (NOTE:  By 'episode of change' we mean a series of changes that are made as one.) to the object's state. Ideally there is a means to order **`versionIds`** such that 
 
-1. a version change can be detected easily (the **_`versionId`_** is different) and
+1. a version change can be detected easily (the **`versionId`** is different) and
 2. so that later versions of an object can be ordered with respect to earlier versions. 
 
 General references to the object remain unqualified by version, however version information is reported as part of the object's state.
 
-A final change in approach allows for an object's history to be maintained and accessed. The spatial-object can be thought of as a 'stack' of immutable snapshots of object state. Each episode of change can be thought as pushing a new version of the object's state onto the top of a growing stack of state snapshots. Each new snaphot has a new **_`versionId`_** (as above). Each stacked snapshot is regarded as immutable (any change leads to a new version). Conceptually, the version history of the objects is maintained by the stack[[**h**](#footnote.h)]. The history of the object up to some particular versioned snapshot is maintained by the 'stack' beneath it. A reference to a particular version clearly references a particular snapshot of the object's state. 
+A final change in approach allows for an object's history to be maintained and accessed. The spatial-object can be thought of as a 'stack' of immutable snapshots of object state. Each episode of change can be thought as pushing a new version of the object's state onto the top of a growing stack of state snapshots. Each new snaphot has a new **`versionId`** (as above). Each stacked snapshot is regarded as immutable (any change leads to a new version). Conceptually, the version history of the objects is maintained by the stack[[**h**](#footnote.h)]. The history of the object up to some particular versioned snapshot is maintained by the 'stack' beneath it. A reference to a particular version clearly references a particular snapshot of the object's state. 
 
 An unversioned reference could either be regarded as a reference to the spatial-object over its entire existence, past, present and as yet unknown future - sometimes called an "Enduring Object". Alternatively, it could be seen as a reference to most recent version available. Ideally references are made in a way that has consistent meaning over all three of the versioning approaches discussed above. There is a reasonable expectation of being able to make clear reference to:
 
@@ -475,11 +475,11 @@ In RDF properties are first class entities in their one right. It is anticipated
 
 ISO TC211 are currently developing a standard, ISO 19150 which defines a method for projecting ISO 19109 application schema (which is the formalism used to express INSPIRE data specifications) into RDF/OWL ontologies.
 
-In summary, INSPIRE application schema (packages) are transformed into ontologies; feature types are transformed into OWL classes; attributes and association roles are transformed into OWL datatype and object properties respectively (though for some complex datatypes attributes are also transformed into object properties); enumerations are transformed into owl enumerated classes; codelist are transformed into **_`skos:ConceptScheme`_** along with an associated OWL class which is a subclass of **_`skos:Concept`_**.
+In summary, INSPIRE application schema (packages) are transformed into ontologies; feature types are transformed into OWL classes; attributes and association roles are transformed into OWL datatype and object properties respectively (though for some complex datatypes attributes are also transformed into object properties); enumerations are transformed into owl enumerated classes; codelist are transformed into **`skos:ConceptScheme`** along with an associated OWL class which is a subclass of **`skos:Concept`**.
 
 ISO 19150 defines patterns for generating property URI for the properties associated with each UML class (feature type, datatype, enumeration, union or codelist) typically of the form:
 
-**_`{OntologyName}/[{UMLClassName}.]{propertyName}`_**
+**`{OntologyName}/[{UMLClassName}.]{propertyName}`**
 
 with character adjustments made for characters that are forbidden in URI/IRI. It is expected that the UMLClassName element of the property URI will be optional in cases where the property is used consistently in all UML classes in which it is used, or it is only defined for use in one class. Modifications to the relevant ISO specifications to relax some of the UML constraints that prevent property reuse across multiple classes, which is prevalent in RDF/OWL and almost completely absent in UML, are being made. In UML properties only exist in the context of their defining class (and its subclasses). In OWL properties are first class citizens that in general can be used with any subject, however the axioms associated with RDFS and OWL can be used to detect inconsistencies in ontologies (unrealisable classes) and data with respect to ontologies.
 
@@ -487,7 +487,7 @@ The diagram below illustrates how an instance of INSPIRE Transport Network **`Ra
 
 ![image alt text](image_7.png)
 
-Note the use of the **_`beginLifespanVersion`_** date as a **_`versionId`_** with the URI for the node that represents the spatial object. The URI for the representative point, which could have been left as a b-node is formed by extending the URI of the spatial object with the local name of the property (simply to achieve distinctness in the nodes identity - there is no semantic intent in the given name) (NOTE:  Strictly there should be a gm:Point intervening between the object and the given gm:Position).
+Note the use of the **`beginLifespanVersion`** date as a **`versionId`** with the URI for the node that represents the spatial object. The URI for the representative point, which could have been left as a b-node is formed by extending the URI of the spatial object with the local name of the property (simply to achieve distinctness in the nodes identity - there is no semantic intent in the given name) (NOTE:  Strictly there should be a gm:Point intervening between the object and the given gm:Position).
 
 It is worth noting that the principal subject of the various RDF statements is the spatial-object (version) itself. The linked to the real-world phenomena, "Manchester Piccadilly Station" is made using the **`inspire:models`** property. This linkage is based on reconciliation of the value of **`stationCode`** as a thematic identifier against the value of the **`skos:notation`** associated with the transport.data.gov.uk URI set of UK railway stations.
 
