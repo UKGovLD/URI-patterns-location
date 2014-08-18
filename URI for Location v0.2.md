@@ -237,20 +237,20 @@ ie. an overall pattern of:
 
 Earlier guidance [[2](#reference.URIforLocationV1.0)] provided for the mapping of non-URI based INSPIRE namespace identifiers URI space as follows:
 
-`{inspireNamespaceUri} = http://location.data.gov.uk/so/{theme}/{class}/{inspireNamespaceId}`
+**`{inspireNamespaceUri} = http://location.data.gov.uk/so/{theme}/{class}/{inspireNamespaceId}`**
 
 Existing URI that use this pattern continue to be supported, however its use for new deployments it is **deprecated** either in favour of URI based INSPIRE namespaces (see previous section) or the following patterns which better aligns with the collection based approach of the revised URI patterns [[1](#reference.URIPatternsV0.4)].
 
-`{inspireNamespaceUri} = http://location.data.gov.uk/{inspireNamespaceId}/so[/{theme}][/{class}]`
+**`{inspireNamespaceUri} = http://location.data.gov.uk/{inspireNamespaceId}/so[/{theme}][/{class}]`**
 
-Here **_{inspireNamespaceId}_** serves the role of a **_{/collection*}_** in the **_{prefix} _**component of the generic pattern. The rest of the pattern then follows from the URI based patterns of the previous section:
+Here **_`{inspireNamespaceId}`_** serves the role of a **_`{/collection*}`_** in the **_`{prefix}`_**component of the generic pattern. The rest of the pattern then follows from the URI based patterns of the previous section:
 
 ie. an overall pattern of:
 
-`http://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/localId}[:{versionId}] or
-http://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/{localId}[/version/{versionId}]`
+**`http://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/localId}[:{versionId}]`** or  
+**`http://location.data.gov.uk/{inspireNamespaceId}[/so][/{theme}][/{class}]/{localId}[/version/{versionId}]`**
 
-Note that **_{theme}_** and **_{class}_** components are made optional, whilst the contribute useful 'hints' to users about the kind of object being referenced, they do not contribute to its identity which is based on the **_inspireNamespaceId_**, **_localId_** and **_versionId_** fields of an INSPIRE spatial object identifier.
+Note that **_`{theme}`_** and **_`{class}`_** components are made optional, whilst the contribute useful 'hints' to users about the kind of object being referenced, they do not contribute to its identity which is based on the **_`inspireNamespaceId`_**, **_`localId`_** and **_`versionId`_** fields of an INSPIRE spatial object identifier.
 
 ### Indirect or Proxied Access to Spatial-Objects
 
