@@ -120,29 +120,23 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
 <table>
   <tr>
     <td><a name="reference.URIPatternsV0.4" />[1]</td>
-    <td>"URI Patterns v0.4"<br />
-        [http://tinyurl.com/UKGovLD-revisedUriPatterns](http://tinyurl.com/UKGovLD-revisedUriPatterns) (temporary) 
-    </td>
+    <td>"URI Patterns v0.4"<br />[http://tinyurl.com/UKGovLD-revisedUriPatterns](http://tinyurl.com/UKGovLD-revisedUriPatterns) (temporary)</td>
   </tr>
   <tr>
     <td><a name="reference.URIforLocationV1.0"/>[2]</td> 
-    <td>"Designing URI Sets for Location"<br />
-        [http://data.gov.uk/library/designing-uri-sets-for-location](http://data.gov.uk/library/designing-uri-sets-for-location)
-    </td>
+    <td>"Designing URI Sets for Location"<br />[http://data.gov.uk/library/designing-uri-sets-for-location](http://data.gov.uk/library/designing-uri-sets-for-location)</td>
   </tr>
   <tr>
     <td><a name="reference.INSPIRE-Glossary"/>[3]</td>
-    <td>INSPIRE Glossary<br />[https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY](https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY
-    </td>
+    <td>INSPIRE Glossary<br />[https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY](https://inspire-registry.jrc.ec.europa.eu/registers/GLOSSARY</td>
   </tr>
   <tr>
     <td><a name="reference.INSPIRE-GCM"/>[4]<tr>
-    <td>INSPIRE Generic Conceptual Model<br /> [http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf](http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf)
-    </td>
+    <td>INSPIRE Generic Conceptual Model<br />[http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf](http://inspire.jrc.ec.europa.eu/documents/Data_Specifications/D2.5_v3.4rc3.pdf)</td>
   </tr>
   <tr>
     <td><a name="reference.ApplicationSchemaCox"/>[5]</td>
-    <td>"Formalization of Application Schemas" Simon Cox, CSIRO<br /> [https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization](https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization)</td>
+    <td>"Formalization of Application Schemas" Simon Cox, CSIRO<br />[https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization](https://www.seegrid.csiro.au/wiki/AppSchemas/SchemaFormalization)</td>
   </tr>
   <tr>
     <td><a name="reference.ISO19103"/>[6]</td>
