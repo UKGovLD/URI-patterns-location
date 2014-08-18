@@ -270,7 +270,7 @@ Requests using non-URI INSPIRE identifiers, which when mapped to URI have a pref
 
 **`{prefix} = http://location.data.gov.uk/so/{theme}/{class}/{inspireNamespaceId}`**
 
-can be routed on the basis of the **_'{inspireNamespaceId}'_**(ie. 4th) segment of the request URI.
+can be routed on the basis of the **'{inspireNamespaceId}'** (ie. 4th) segment of the request URI.
 
 ## URI Patterns for Spatial Things
 
@@ -292,7 +292,7 @@ which fully expands to either:
 * For non-URI based INSPIRE namespaces :  
 **`http://location.data.gov.uk/{inspireNamespaceId}/id[/{concept}]/{codeset}/{codepoint}`** or  
 **`http://location.data.gov.uk/id/{theme}/{concept}/{codeset}/{codepoint}`**  
-for collection based or legacy **`_location.data.gov.uk`_** URI patterns respectively
+for collection based or legacy **`location.data.gov.uk`** URI patterns respectively
 
 The use of URI based INSPIRE namespace identifiers is preferred over the deprecated use of non-URI based INSPIRE namespaces (with collection based prefixing preferred over legacy patterns).
 
@@ -416,7 +416,7 @@ Within INSPIRE spatial-objects (feature-instances) the properties **`validFrom`*
 
 ## Versioned Spatial Objects
 
-INSPIRE identifiers provide for an optional **`versionId`** field. Within the definition of the INSPIRE GCM datatype **`Identifier`**, **`versionId`** is tagged both as **`lifecycleInfo`** (see below) and **`voidable`**with multiplicity `0..1`. This latter covers that cases where there is a **`versionId`**, but it is not known (i.e. void) and where **`versionId`**is not used (multiplicity of zero).
+INSPIRE identifiers provide for an optional **`versionId`** field. Within the definition of the INSPIRE GCM datatype **`Identifier`**, **`versionId`** is tagged both as **`lifecycleInfo`** (see below) and **`voidable`** with multiplicity `0..1`. This latter covers that cases where there is a **`versionId`**, but it is not known (i.e. void) and where **`versionId`** is not used (multiplicity of zero).
 
 ![image alt text](image_4.png)
 
