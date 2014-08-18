@@ -395,7 +395,7 @@ The table below summarises the occurrences of thematic referencing apparent in t
 | | `RailwayStationCode` | `stationCode:CharacterString` “A unique code assigned to a railway station.” |
 | Transport Networks (Road) | `ERoad` | `europeanRouteNumber:CharacterString` “Code, identifying the route in the international E-road network. The code always starts with a letter 'E', followed by a one-, two- or three-digit number.” |
 | | `Road` | `localRoadCode:CharacterString` “Identification code assigned to the road by the local road authority.” |
-| | | `nationalRoadCode:CharacterString` “The national number of the road.” |
+| | `Road` | `nationalRoadCode:CharacterString` “The national number of the road.” |
 | Hydrography | `HydroObject` | `hydroId:HydroIdentifier` “An identifier that is used to identify a hydrographic object in the real world. It provides a 'key' for implicitly associating different representations of the object.” HydroIdentifiers are composed of “classificationScheme”, “namespace” and “local-id” fields. The first two are used to successively scope the third. |
 
 # Annex II Things, Spatial-Objects and Versions
@@ -416,62 +416,40 @@ Within INSPIRE spatial-objects (feature-instances) the properties **_`validFrom`
 
 ## Versioned Spatial Objects
 
-INSPIRE identifiers provide for an optional **_versionId_** field. Within the definition of the INSPIRE GCM datatype **_Identifier_**, **_versionId_** is tagged both as **_lifecycleInfo_** (see below) and **_voidable _**with multiplicity 0..1. This latter covers that cases where there is a **_versionId_**, but it is not known (i.e. void) and where **_versionId _**is not used (multiplicity of zero).
+INSPIRE identifiers provide for an optional **_`versionId`_** field. Within the definition of the INSPIRE GCM datatype **_`Identifier`_**, **_`versionId`_** is tagged both as **_`lifecycleInfo`_** (see below) and **_`voidable` _**with multiplicity `0..1`. This latter covers that cases where there is a **_`versionId`_**, but it is not known (i.e. void) and where **_`versionId` _**is not used (multiplicity of zero).
 
 ![image alt text](image_4.png)
 
-In situations where the optional **_versionId_** is not used, the spatial object can be thought of as a container of object state. This state is generally mutable to allow for change. The **_namespace_** and **_localId_** fields are used designate that 'single', mutable, container. Typically a collection of spatial-objects (a.k.a. feature instances) is released as an internally consistent dataset or feature collection. External references to the objects are made without any qualifying **_versionId_**.
+In situations where the optional **_`versionId`_** is not used, the spatial object can be thought of as a container of object state. This state is generally mutable to allow for change. The **_`namespace`_** and **_`localId`_** fields are used designate that 'single', mutable, container. Typically a collection of spatial-objects (a.k.a. feature instances) is released as an internally consistent dataset or feature collection. External references to the objects are made without any qualifying **_`versionId`_**.
 
-A small change to this approach is to include a **_versionId_** as part of an objects identifier. **_versionId_** is then updated after each episode of change (NOTE:  By 'episode of change' we mean a series of changes that are made as one.) to the object's state. Ideally there is a means to order **_versionIds_** such that 
+A small change to this approach is to include a **_`versionId`_** as part of an objects identifier. **_`versionId`_** is then updated after each episode of change (NOTE:  By 'episode of change' we mean a series of changes that are made as one.) to the object's state. Ideally there is a means to order **_`versionIds`_** such that 
 
-1. a version change can be detected easily (the **_versionId_** is different) and
-
+1. a version change can be detected easily (the **_`versionId`_** is different) and
 2. so that later versions of an object can be ordered with respect to earlier versions. 
 
 General references to the object remain unqualified by version, however version information is reported as part of the object's state.
 
-A final change in approach allows for an object's history to be maintained and accessed. The spatial-object can be thought of as a 'stack' of immutable snapshots of object state. Each episode of change can be thought as pushing a new version of the object's state onto the top of a growing stack of state snapshots. Each new snaphot has a new **_versionId_** (as above). Each stacked snapshot is regarded as immutable (any change leads to a new version). Conceptually, the version history of the objects is maintained by the stack (NOTE:  In many pratical database backed systems a journal table is used to maintain the historic state of entities that have been changed along with metadata about the change, eg. when it was made, why and by whom). The history of the object up to some particular versioned snapshot is maintained by the 'stack' beneath it. A reference to a particular version clearly references a particular snapshot of the object's state. 
+A final change in approach allows for an object's history to be maintained and accessed. The spatial-object can be thought of as a 'stack' of immutable snapshots of object state. Each episode of change can be thought as pushing a new version of the object's state onto the top of a growing stack of state snapshots. Each new snaphot has a new **_`versionId`_** (as above). Each stacked snapshot is regarded as immutable (any change leads to a new version). Conceptually, the version history of the objects is maintained by the stack[[**h**](#footnote.h)]. The history of the object up to some particular versioned snapshot is maintained by the 'stack' beneath it. A reference to a particular version clearly references a particular snapshot of the object's state. 
 
 An unversioned reference could either be regarded as a reference to the spatial-object over its entire existence, past, present and as yet unknown future - sometimes called an "Enduring Object". Alternatively, it could be seen as a reference to most recent version available. Ideally references are made in a way that has consistent meaning over all three of the versioning approaches discussed above. There is a reasonable expectation of being able to make clear reference to:
 
 * the enduring spatial-object, 
-
 * a particular snapshots of its state and 
-
 * the most recent or current such snapshot.
 
 The table below illustrates one possible pattern of references that make these distinctions:
 
-<table>
-  <tr>
-    <td>Identifier based references</td>
-    <td>Referrent</td>
-    <td>Response Behaviour</td>
-  </tr>
-  <tr>
-    <td>{namespace}:{localId}/endurant</td>
-    <td>Enduring object</td>
-    <td>Variable over time (new snapshot versions added)
-Responses include the enduring object (enumerating currently available versions) and may include the latest snapshot.</td>
-  </tr>
-  <tr>
-    <td>{namespace}:{localId}</td>
-    <td>Current snapshot</td>
-    <td>Variable
-Note in the cases where versionId is available this is an accessor to the particular version,that is currently most recent.
-Responses include the latest snapshot include and may include the enduring object (enumerating currently available versions). </td>
-  </tr>
-  <tr>
-    <td>{namespace}:{localId}:{versionId}</td>
-    <td>Specific Snapshot</td>
-    <td>Invariant (or not accessible when history is not maintained).</td>
-  </tr>
-</table>
-
+| **Identifier based references** | **Referrent** | **Response Behaviour** |
+|---------------------------------|---------------|------------------------|
+| **`{namespace}:{localId}/endurant`** | Enduring object | Variable over time (new snapshot versions added).<br />Responses include the enduring object (enumerating currently available versions) and may include the latest snapshot. |
+| **`{namespace}:{localId}`** | Current snapshot | Variable.<br />Note in the cases where **`versionId`** is available this is an accessor to the particular version that is currently most recent.<br />Responses include the latest snapshot and may include the enduring object (enumerating currently available versions). |
+| **`{namespace}:{localId}:{versionId}`** | Specific Snapshot | Invariant (or not accessible when history is not maintained). |
 
 Whilst for some (this author included) it would be more natural that an unversioned reference designate the enduring entity, the reference patterns here are arranged such that the meaning of the unversioned reference, as an accessor to the current snapshot, aligns with the natural access pattern of the simpler single-current-version cases.
 
 ![image alt text](image_5.png)
+
+<a name="footnote.h">**[h]**</a> In many practical database backed systems a journal table is used to maintain the historic state of entities that have been changed along with metadata about the change, eg. when it was made, why and by whom.
 
 ## Commonly (Re-)defined INSPIRE spatial-object identity and lifecycle properties
 
@@ -479,33 +457,13 @@ By virtue of the nature of the UML based modelling approach used in the definiti
 
 The descriptions in the table below are taken from Recommendations 17 and 33 within the INSPIRE GCM [[4](#reference.INSPIRE-GCM)]
 
-<table>
-  <tr>
-    <td>Object Property</td>
-    <td>Description</td>
-  </tr>
-  <tr>
-    <td>inspireId:Identifier</td>
-    <td>"external object identifier of the spatial object "</td>
-  </tr>
-  <tr>
-    <td>beginLifespanVersion:DateTime</td>
-    <td>"Date and time at which this version of the spatial object was inserted or changed in the spatial data set."</td>
-  </tr>
-  <tr>
-    <td>endLifespanVersion:DateTime[0..1]</td>
-    <td>"Date and time at which this version of the spatial object was superseded or retired in the spatial data set."</td>
-  </tr>
-  <tr>
-    <td>validFrom:DateTime</td>
-    <td>"The time when the phenomenon started to exist in the real world."</td>
-  </tr>
-  <tr>
-    <td>validTo:DateTime</td>
-    <td>"The time from which the phenomenon no longer exists in the real world."</td>
-  </tr>
-</table>
 
+| **Object Property** | **Description** |
+|---------------------|-----------------| 
+| **`inspireId:Identifier`** | "external object identifier of the spatial object " |
+| **`beginLifespanVersion:DateTime`** | "Date and time at which this version of the spatial object was inserted or changed in the spatial data set." |
+| **`endLifespanVersion:DateTime[0..1]`** | "Date and time at which this version of the spatial object was superseded or retired in the spatial data set." | 
+| **`validFrom:DateTime`** | "The time when the phenomenon started to exist in the real world." |
 
 The diagrams below illustrate the use of some of these common property definitions within the AdministrativeUnits (AU) data specification. 
 
@@ -517,21 +475,21 @@ In RDF properties are first class entities in their one right. It is anticipated
 
 ISO TC211 are currently developing a standard, ISO 19150 which defines a method for projecting ISO 19109 application schema (which is the formalism used to express INSPIRE data specifications) into RDF/OWL ontologies.
 
-In summary, INSPIRE application schema (packages) are transformed into ontologies; feature types are transformed into OWL classes; attributes and association roles are transformed into OWL datatype and object properties respectively (though for some complex datatypes attributes are also transformed into object properties); enumerations are transformed into owl enumerated classes; codelist are transformed into **_skos:ConceptScheme_** along with an associated OWL class which is a subclass of **_skos:Concept_**.
+In summary, INSPIRE application schema (packages) are transformed into ontologies; feature types are transformed into OWL classes; attributes and association roles are transformed into OWL datatype and object properties respectively (though for some complex datatypes attributes are also transformed into object properties); enumerations are transformed into owl enumerated classes; codelist are transformed into **_`skos:ConceptScheme`_** along with an associated OWL class which is a subclass of **_`skos:Concept`_**.
 
 ISO 19150 defines patterns for generating property URI for the properties associated with each UML class (feature type, datatype, enumeration, union or codelist) typically of the form:
 
-**_{OntologyName}/[{UMLClassName}.]{propertyName}_**
+**_`{OntologyName}/[{UMLClassName}.]{propertyName}`_**
 
 with character adjustments made for characters that are forbidden in URI/IRI. It is expected that the UMLClassName element of the property URI will be optional in cases where the property is used consistently in all UML classes in which it is used, or it is only defined for use in one class. Modifications to the relevant ISO specifications to relax some of the UML constraints that prevent property reuse across multiple classes, which is prevalent in RDF/OWL and almost completely absent in UML, are being made. In UML properties only exist in the context of their defining class (and its subclasses). In OWL properties are first class citizens that in general can be used with any subject, however the axioms associated with RDFS and OWL can be used to detect inconsistencies in ontologies (unrealisable classes) and data with respect to ontologies.
 
-The diagram below illustrates how an instance of INSPIRE Transport Network **RailwayStationNode** can be represented in RDF.
+The diagram below illustrates how an instance of INSPIRE Transport Network **`RailwayStationNode`** can be represented in RDF.
 
 ![image alt text](image_7.png)
 
-Note the use of the **_beginLifespanVersion_** date as a **_versionId_** with the URI for the node that represents the spatial object. The URI for the representative point, which could have been left as a b-node is formed by extending the URI of the spatial object with the local name of the property (simply to achieve distinctness in the nodes identity - there is no semantic intent in the given name) (NOTE:  Strictly there should be a gm:Point intervening between the object and the given gm:Position).
+Note the use of the **_`beginLifespanVersion`_** date as a **_`versionId`_** with the URI for the node that represents the spatial object. The URI for the representative point, which could have been left as a b-node is formed by extending the URI of the spatial object with the local name of the property (simply to achieve distinctness in the nodes identity - there is no semantic intent in the given name) (NOTE:  Strictly there should be a gm:Point intervening between the object and the given gm:Position).
 
-It is worth noting that the principal subject of the various RDF statements is the spatial-object (version) itself. The linked to the real-world phenomena, "Manchester Piccadilly Station" is made using the **inspire:models** property. This linkage is based on reconciliation of the value of **stationCode** as a thematic identifier against the value of the **skos:notation** associated with the transport.data.gov.uk URI set of UK railway stations.
+It is worth noting that the principal subject of the various RDF statements is the spatial-object (version) itself. The linked to the real-world phenomena, "Manchester Piccadilly Station" is made using the **`inspire:models`** property. This linkage is based on reconciliation of the value of **`stationCode`** as a thematic identifier against the value of the **`skos:notation`** associated with the transport.data.gov.uk URI set of UK railway stations.
 
 Multiple spatial-object (or spatial-object-versions) can make an inspire:models reference to the relevant real-world object where established URI sets exist and there is a mechanism to achieve reconciliation.
 
