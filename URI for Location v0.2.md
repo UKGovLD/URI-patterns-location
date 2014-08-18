@@ -27,7 +27,9 @@ It goes on to defined a spatial object as:
 
 This paper is focussed on the use of http[s] URI by the UK public sector to meet its INSPIRE objectives.
 
-This paper updates the URI patterns provided in earlier guidance [[2](#reference.URIforLocationV1.0)] in line with changes proposed for the general use of URI patterns for data publishing within the UK public sector [[1](#reference.URIPatternsV0.4)] and making use of changes in INSPIRE that allow full URI to be used as INSPIRE namespaces (NOTE:  Previously character restrictions on the 'spelling' of INSPIRE namespaces prevented URI in general and HTTP URI in particular from being used as INSPIRE namespaces.).
+This paper updates the URI patterns provided in earlier guidance [[2](#reference.URIforLocationV1.0)] in line with changes proposed for the general use of URI patterns for data publishing within the UK public sector [[1](#reference.URIPatternsV0.4)] and making use of changes in INSPIRE that allow full URI to be used as INSPIRE namespaces[a]. 
+
+[a]: Previously character restrictions on the 'spelling' of INSPIRE namespaces prevented URI in general and HTTP URI in particular from being used as INSPIRE namespaces.
 
 ## INSPIRE Spatial Objects
 
@@ -39,7 +41,7 @@ INSPIRE documents discuss three forms of identifiers:
 * thematic identifiers
 * geographic identifiers
 
-**Unique object identifiers** are identifiers that can be used to make external (NOTE:  i.e. references to objects within a dataset from outside of that dataset.) references to INSPIRE spatial objects. They are made up of three components:
+**Unique object identifiers** are identifiers that can be used to make external[b] references to INSPIRE spatial objects. They are made up of three components:
 
 * **namespaceId**	divides the space of unique object 
   identifiers into partitions that can be administered by 
@@ -56,47 +58,52 @@ INSPIRE documents discuss three forms of identifiers:
   that maintain object history. Object versioning and change is discussed 
   further in "Annex II Things, Spatial-Objects and Versions".
 
-**Thematic identifiers** are typically conveyed as coded attributes of a spatial object, for example a railway station or airport code from a reservation system, or a waterbody identifier from a catchment planning system. When given or available they 'identify' the real-world phenomena for which the spatial-object is abstract representation. Ideally thematic identifiers where available should be used to form URI for the real-world phenomena to which they pertain. They provide away of associating multiple spatial-objects that pertain to the same real-world phenomena. See xxx
+**Thematic identifiers** are typically conveyed as coded attributes of a spatial object, for example a railway station or airport code from a reservation system, or a waterbody identifier from a catchment planning system. When given or available they 'identify' the real-world phenomena for which the spatial-object is abstract representation. Ideally thematic identifiers where available should be used to form URI for the real-world phenomena to which they pertain. They provide a way of associating multiple spatial-objects that pertain to the same real-world phenomena.
 
 **Geographic identifiers**: the INSPIRE Generic Conceptual Model [[4](#reference.INSPIRE-GCM)] defines geographical identifiers as:
 
-"spatial reference in the form of a label or code that identifies a location" 
+> "spatial reference in the form of a label or code that identifies a location" 
 
 and gives place names and post codes as examples of geographic identifiers. Geographic identifiers may be spatial-objects in their own right, for example Addresses under INSPIRE Annex I or property based references to entries in a gazetteer. They are not discussed further in this document.
 
+[b] i.e. references to objects within a dataset from outside of that dataset.
+
 ## location.data.gov.uk
 
-**http://location.data.gov.uk** was established under the earlier guidance [[2](#reference.URIforLocationV1.0)] has two primary roles:
+**`http://location.data.gov.uk`** was established under the earlier guidance [[2](#reference.URIforLocationV1.0)] has two primary roles:
 
 1. as a base URI for the identification of INSPIRE spatial-objects 
-
 2. as a base URI for the publication of linked-data vocabulary derived from INSPIRE application-schema.
 
 The first of these roles is deprecated by this revision. 
 
-However, the role of location.data.gov.uk in the publication of linked-data vocabularies derived from INSPIRE data specifications continues until equivalent vocabularies are published and supported by the wider INSPIRE initiative.
+However, the role of **`location.data.gov.uk`** in the publication of linked-data vocabularies derived from INSPIRE data specifications continues until equivalent vocabularies are published and supported by the wider INSPIRE initiative.
 
 ### Revision of URI patterns for identifying Spatial-Objects
 
-The URI patterns promoted in earlier guidance [2] embed INSPIRE spatial-object within an http URI based at **http://location.data.gov.uk/**. The character constraints on the external identifiers for INSPIRE spatial-object identifiers were such that, while they could not themselves be URI, they could be embedded within URI path segments:
+The URI patterns promoted in earlier guidance [[2](#reference.URIforLocationV1.0)] embed INSPIRE spatial-object within an http URI based at **`http://location.data.gov.uk/`**. The character constraints on the external identifiers for INSPIRE spatial-object identifiers were such that, while they could not themselves be URI, they could be embedded within URI path segments:
 
-**`http://location.data.gov.uk/so/{theme}/{class}/{inspireNamespaceId}/{inspireLocalId}[/{inspireVersionId}**]`
+**`http://location.data.gov.uk/so/{theme}/{class}/{inspireNamespaceId}/{inspireLocalId}[/{inspireVersionId}]`**
 
-The **_{theme}_** and **_{class}_** fields provide human oriented 'hints' about the kind of spatial-object referenced by a URI, but identification of the spatial-object itself is the role of the three trailing 'id' fields.
+The **`{theme}`** and **`{class}`** fields provide human oriented 'hints' about the kind of spatial-object referenced by a URI, but identification of the spatial-object itself is the role of the three trailing 'id' fields.
 
 Spatial-object publication could be hosted directly at location.data.gov.uk, but more typically, redirection or proxy based access was configured so that access requests are routed to infrastructure provided by the data publisher. 
 
-This original pattern for publishing INSPIRE spatial-objects is awkward in practice, firstly because in order to correctly form a URI for a spatial-object there is a need to know not only it's external object identifier (**_namespaceId_**, **_localId_** and **_versionId_**) but also the INSPIRE data specification class name and theme associated with the object being published; and secondly publications of spatial-objects in location.data.gov.uk URI space separates elements that might easily form a more cohesive single collection e.g. sampling points (NOTE:  http://location.data.gov.uk/so/ef/SamplingPoint/bwsp.eaew) from their related bathing-waters (NOTE:  http://environment.data.gov.uk/id/bathing-water) and sample assessment data (NOTE:  http://environment.data.gov.uk/data/bathing-water-quality).
+This original pattern for publishing INSPIRE spatial-objects is awkward in practice, firstly because in order to correctly form a URI for a spatial-object there is a need to know not only it's external object identifier (**`namespaceId`**, **`localId`** and **`versionId`**) but also the INSPIRE data specification class name and theme associated with the object being published; and secondly publications of spatial-objects in location.data.gov.uk URI space separates elements that might easily form a more cohesive single collection e.g. sampling points[c] from their related bathing-waters[d]  and sample assessment data[e].
 
 The character constraints associated with the components of an INSPIRE spatial-object identifiers have been relaxed.It is now possible to use URI, particularly dereferencable URI such as an HTTP or HTTPS URI, as INSPIRE namespace identifiers. 
 
 Given this change, there is no longer a need for **http://location.data.gov.uk **to serve as the base URI for spatial-object publication. Instead the left hand part of a URI assigned for a spatial-object can serve the role of an INSPIRE namespace identifier (see section "URI based INSPIRE namespaces" below). In this way spatial-objects can be published as part of a data collection using URI patterns aligned with the common guidance [[1](#reference.URIPatternsV0.4)].
 
-**`http://{domain}{/collection*}[/so][/{class}]/{inspireLocalId}[/{inspireVersionId}**]`
+**`http://{domain}{/collection*}[/so][/{class}]/{inspireLocalId}[/{inspireVersionId}]`**
 
 The use of **location.data.gov.uk** as base URI for the publication of INSPIRE spatial objects is **deprecated** by this revision. However, earlier URI pattern continues to be supported in order to support existing use.
 
 New spatial-object publications are encouraged to use absolute http(s): URI as the INSPIRE namespace identifier component of an INSPIRE spatial-object's external identifier.
+
+[c]: http://location.data.gov.uk/so/ef/SamplingPoint/bwsp.eaew
+[d]: http://environment.data.gov.uk/id/bathing-water
+[e]: http://environment.data.gov.uk/data/bathing-water-quality
 
 ## Pattern Notation
 
