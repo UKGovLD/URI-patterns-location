@@ -380,107 +380,23 @@ Note that because **_`validFrom`_**, **_`validTo`_** and **_`inspireId`_** are u
 
 The table below summarises the occurrences of thematic referencing apparent in the current draft Implementing Directive: "[Implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services](http://ec.europa.eu/transparency/regcomitology/index.cfm?do=Search.getPDF&lA6b4z6edALEzOuvQ2DQwEuYwr24bl+u6M8oCwqlYrvB7EJR+poTzWZ/2wT/z/JFTr7x0HnynbCJdi/BzR4ZvdPpAur0FOHhej8jYcN49FA=)". In most cases the thematic nature of the reference is not explicit in the corresponding data specification.
 
-<table>
-  <tr>
-    <td>INSPIRE Theme</td>
-    <td>INSPIRE Object Type</td>
-    <td>INSPIRE Object Property Name, Type and Description</td>
-  </tr>
-  <tr>
-    <td>Common</td>
-    <td>Multiple</td>
-    <td>country: CountryCode</td>
-  </tr>
-  <tr>
-    <td>Administrative Unit</td>
-    <td>AdministrativeUnit</td>
-    <td>nationalCode:CharacterString 
-"Thematic identifier corresponding to the national administrative codes defined in each country."</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>NUTSRegion</td>
-    <td>NUTSCode: CharacterString
-"Unique code of the territorial unit for statistics as defined in the framework of the Regulation (EC) No 1059/2003 of the European Parliament and of the Council of 26 May 2003.”</td>
-  </tr>
-  <tr>
-    <td>Address</td>
-    <td>Address
-AddressComponent</td>
-    <td>alternativeIdentifier: CharacterString
-“External, thematic identifier of the address/address component spatial object, which enables interoperability with existing legacy systems or applications.”</td>
-  </tr>
-  <tr>
-    <td>Cadastral Parcel
-</td>
-    <td>BasicPropertyUnit
-CadastralParcel</td>
-    <td>nationalCadastralReference: CharacterString
-"Thematic identifier at national level, generally the full national code of the basic property unit. Must ensure the link to the national cadastral register or equivalent."</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>CadastralZoning</td>
-    <td>nationalCadastalZoningReference: CharacterString
-“Thematic identifier at national level, generally the full national code of the cadastral zoning.”</td>
-  </tr>
-  <tr>
-    <td>Transport Networks (Air)</td>
-    <td>AerodromeNode</td>
-    <td>designatorIATA: CharacterString
-“The three letter IATA designator of the aerodrome (airport/heliport).”</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>AerodromeNode</td>
-    <td>locationIndicatorICAO: CharacterString
-“The four letter ICAO location indicator of the aerodrome (airport/heliport), as listed in ICAO DOC 7910.”</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Multiple</td>
-    <td>designator: CharacterString
-designator code values that designate things associated with Air Transport. Designation varies by Object Type.</td>
-  </tr>
-  <tr>
-    <td>Transport Networks (Rail)</td>
-    <td>RailwayLine</td>
-    <td>railwayLineCode: CharacterString
-“A code assigned to a railway line which is unique within a Member State”</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>RailwayStationCode</td>
-    <td>stationCode: CharacterString
-“A unique code assigned to a railway station.”</td>
-  </tr>
-  <tr>
-    <td>Transport Networks (Road)</td>
-    <td>ERoad</td>
-    <td>europeanRouteNumber: CharacterString
-“Code, identifying the route in the international E-road network. The code always starts with a letter 'E', followed by a one-, two- or three-digit number.”</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Road</td>
-    <td>localRoadCode: CharacterString
-“Identification code assigned to the road by the local road authority.”</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td>nationalRoadCode: CharacterString
-“The national number of the road.”</td>
-  </tr>
-  <tr>
-    <td>Hydrography</td>
-    <td>HydroObject</td>
-    <td>hydroId: HydroIdentifier
-“An identifier that is used to identify a hydrographic object in the real world. It provides a 'key' for implicitly associating different representations of the object.”
-HydroIdentifiers are composed of “classificationScheme”, “namespace” and “local-id” fields. The first two are used to successively scope the third.</td>
-  </tr>
-</table>
-
+|  **INSPIRE Theme** | **INSPIRE Object Type**| **INSPIRE Object Property Name, Type and Descrition**|
+|--------------------|------------------------|------------------------------------------------------|
+| Common | Multiple | `country:CountryCode` |
+| Administrative Unit | AdministrativeUnit | `nationalCode:CharacterString` "Thematic identifier corresponding to the national administrative codes defined in each country." |
+|| `NUTSRegion` | `NUTSCode:CharacterString` "Unique code of the territorial unit for statistics as defined in the framework of the Regulation (EC) No 1059/2003 of the European Parliament and of the Council of 26 May 2003.” |
+| Address | `Address` `AddressComponent` | `alternativeIdentifier:CharacterString` “External, thematic identifier of the address/address component spatial object, which enables interoperability with existing legacy systems or applications.” |
+| Cadastral Parcel | `BasicPropertyUnit` `CadastralParcel` | `nationalCadastralReference:CharacterString` "Thematic identifier at national level, generally the full national code of the basic property unit. Must ensure the link to the national cadastral register or equivalent." |
+| | `CadastralZoning` | `nationalCadastalZoningReference:CharacterString` “Thematic identifier at national level, generally the full national code of the cadastral zoning.” |
+| Transport Network (Air) | `AerodromeNode` | `designatorIATA: CharacterString` “The three letter IATA designator of the aerodrome (airport/heliport). |
+| | `AerodromeNode` | `locationIndicatorICAO:CharacterString` “The four letter ICAO location indicator of the aerodrome (airport/heliport), as listed in ICAO DOC 7910.” |
+| | Multiple |  `designator:CharacterString` designator code values that designate things associated with Air Transport. Designation varies by Object Type. |
+| Transport Networks (Rail) | `RailwayLine` | `railwayLineCode:CharacterString` “A code assigned to a railway line which is unique within a Member State” |
+| | `RailwayStationCode` | `stationCode:CharacterString` “A unique code assigned to a railway station.” |
+| Transport Networks (Road) | `ERoad` | `europeanRouteNumber:CharacterString` “Code, identifying the route in the international E-road network. The code always starts with a letter 'E', followed by a one-, two- or three-digit number.” |
+| | `Road` | `localRoadCode:CharacterString` “Identification code assigned to the road by the local road authority.” |
+| | | `nationalRoadCode:CharacterString` “The national number of the road.” |
+| Hydrography | `HydroObject` | `hydroId:HydroIdentifier` “An identifier that is used to identify a hydrographic object in the real world. It provides a 'key' for implicitly associating different representations of the object.” HydroIdentifiers are composed of “classificationScheme”, “namespace” and “local-id” fields. The first two are used to successively scope the third. |
 
 # Annex II Things, Spatial-Objects and Versions
 
